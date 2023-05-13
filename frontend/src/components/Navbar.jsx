@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 
-
 const Navbar = () => {
 
     return (
@@ -10,6 +9,9 @@ const Navbar = () => {
         <div className="navbar">
             <div className="toggleButton">
                 <button></button>
+            </div>
+            <div className="navbar-logo">
+                Interactive Portfolio
             </div>
             <div className="links">
                 <Link to="/"> About </Link>
