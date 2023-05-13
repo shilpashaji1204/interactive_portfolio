@@ -1,8 +1,17 @@
 .navbar {
-
+    display: flex;
     width: 100%;
     height: 100px;
     background: rgb(233, 186, 194);
+}
+.navbar-logo {
+
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 20px;
+     
+
 }
 
 .links {
@@ -11,7 +20,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:flex-end;
     color: white;
 }
 
