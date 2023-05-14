@@ -14,8 +14,8 @@ const getUserById = id => {
 	})
 }
 
-const getExperienceById = id =>{
-  return db.query("SELECT * FROM experience; WHERE id = $1", [id]).then(data => {
+const getExperienceById = id => {
+  return db.query("SELECT title FROM experience WHERE experience.user_id = $1", [id]).then(data => {
     return data.rows;
   })
 }
