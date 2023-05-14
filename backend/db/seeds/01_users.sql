@@ -1,4 +1,4 @@
-INSERT INTO users (name, email, password, admin)
+INSERT INTO users (name, email, password, about, admin)
 VALUES ('Jack Nicholson', 'jack@a.com', '123', NULL, FALSE),
 ('Jack Torrance', 'shi@ning.com', 'allwork', NULL,  FALSE),
 ('Frank Costello', 'de@parted.com', 'boston', NULL, FALSE),
