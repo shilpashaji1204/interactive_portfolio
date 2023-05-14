@@ -16,6 +16,7 @@ const connObj = {
 	database: DB_DATABASE,
 }
 
+const client = new Client();
 const runMigrations = async db => {
 	const migrations = await fs.readdir(SCHEMA_PATH);
 	for (migration of migrations) {
