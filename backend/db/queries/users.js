@@ -15,7 +15,19 @@ const getUserById = id => {
 }
 
 const getExperienceById = id => {
-  return db.query("SELECT title FROM experience WHERE experience.user_id = $1", [id]).then(data => {
+  return db.query("SELECT * FROM experience WHERE experience.user_id = $1", [id]).then(data => {
+    return data.rows;
+  })
+}
+
+const getAboutById = id => {
+  return db.query("SELECT about FROM users WHERE id = $1", [id]).then(data => {
+    return data.rows;
+  })
+}
+
+const getProjectsById = id => {
+  return db.query("SELECT * FROM projects WHERE projects.user_id = $1", [id]).then(data => {
     return data.rows;
   })
 }
@@ -33,4 +45,4 @@ const addUser = (user) => {
     });
 };
 
-module.exports = {getAllUsers, getUserById, getExperienceById, addUser}
+module.exports = {getAllUsers, getUserById, getExperienceById, addUser, getAboutById, getProjectsById}
