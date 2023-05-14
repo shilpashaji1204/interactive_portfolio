@@ -1,0 +1,23 @@
+INSERT INTO projects (title, description, features, tech_stack, image_url, project_url, user_id)
+VALUES ('Tweeter',
+ 'Single page Ajax-based twitter clone using jQuery, HTML and CSS.', 
+ 'Post new tweets to the feed without reloading the page or being directed to a new URL. Error messages when tweets don''t meet requirements (empyt strings, over 140 character lenght). Responsive design featuring a desktop format and tablet/mobile format. Interactive highlights when hovering over tweets or clickables. Displays time since a tweet was posted. Functional character counter which indicates when the allowable number of caracters has been exceeded', 
+ 'Express, Node', 'https://github.com/7-O-2-H/tweeter/blob/master/docs/Desktop%20Tweet%20Feed.png', 'https://github.com/7-O-2-H/tweeter', 
+ 5),
+('Scheduler', 'React based app for scheduling appointments/interviews.', 
+'Book appointments with mentors for assistance in a process similar to the one used by Lighthouse Labs. Users can book appointments with an available mentor in each of 5 available slots from Monday to Friday. Appointments can also be cancelled or edited.', 'React, Sass, JS; Tested with Cypress and Storybook', 
+'https://github.com/7-O-2-H/scheduler/blob/master/docs/Full%20View%20of%20Application.png',
+'https://github.com/7-O-2-H/scheduler', 
+5),
+('Sneaker Vault', 
+'Niche resale app in the style of ebay or kijiji for shoes with JS and express.',
+'Admins can list sales and include images via urls. Users can send messages to sellers or contact them by e-mail using nodemailer. Users can favourite items and sort by subcategories',
+'https://raw.githubusercontent.com/010JGL/mid_term/master/docs/pics/Screen1.png',
+'https://github.com/7-O-2-H/sneaker_vault',
+5)
+('Lonely Books', 
+'A mini e-commerce application',
+'Browse listings, view, buy, filter by price, mark favourites to check later and even send messages to the seller listing the item.',
+'https://github.com/shilpashaji1204/buy_sell_listing_website',
+'https://github.com/shilpashaji1204/buy_sell_listing_website',
+7);

@@ -5,5 +5,6 @@ CREATE TABLE users (
   name VARCHAR(255),
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255), 
+  about TEXT,
   admin BOOLEAN DEFAULT FALSE
 );

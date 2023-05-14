@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS projects CASCADE;
--- CREATE projects
+-- CREATE PROJECTS
 CREATE TABLE projects (
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
