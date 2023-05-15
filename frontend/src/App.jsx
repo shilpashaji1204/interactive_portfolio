@@ -6,6 +6,8 @@ import Work from './pages/Work';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
+import TechStack from './pages/TechStack';
+
 
 function App() {
 
@@ -19,6 +21,8 @@ function App() {
             <Route path="/work" element = {<Work />} />
             <Route path="/projects" element = {<Projects />} />
             <Route path="/contact" element = {<Contact />} />
+            <Route path="/techStack" element={<TechStack />} />
+
           </Routes>
         </Router>
        
