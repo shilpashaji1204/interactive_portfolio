@@ -1,7 +1,13 @@
-const db = require('../../configs/db.config');
+const express = require('express');
+const router = express.Router();
+const messageQueries = require('../db/queries/messages');
 
-const getAllMessages = () => {
-	return db.query("SELECT * FROM messages;").then(data => {
-		return data.rows;
-	})
-}
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  messageQueries.getMessageById(2)
+  .then(data => {
+    res.send(data);
+  })
+});
+
+module.exports = router;

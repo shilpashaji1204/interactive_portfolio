@@ -7,7 +7,13 @@ const getAllMessages = () => {
 }
 
 const getMessagesByProjectId = id => {
-  return db.query("SELECT * FROM messages WHERE projects.user_id = $1", [id]).then(data => {
+  return db.query("SELECT * FROM messages WHERE messages.project_id = $1", [id]).then(data => {
+    return data.rows;
+  })
+}
+
+const getMessageById = id => {
+  return db.query("SELECT * FROM messages WHERE id = $1", [id]).then(data => {
     return data.rows;
   })
 }
@@ -26,4 +32,4 @@ const createMessage = (project_reference, content, sender, receiver) => {
     });
 };;
 
-module.exports = {getAllMessages, getMessagesByProjectId, createMessage};
+module.exports = {getAllMessages, getMessagesByProjectId, createMessage, getMessageById};

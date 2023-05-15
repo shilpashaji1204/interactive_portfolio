@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const users = require('../db/queries/users');
+const userQueries = require('../db/queries/users');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {

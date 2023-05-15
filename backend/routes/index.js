@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const projectsQueries = require('../db/queries/projects');
+const projectQueries = require('../db/queries/projects');
 
 /* GET all projects. */
 router.get('/', function(req, res, next) {
-  projectsQueries.getAllProjects()
+  projectQueries.getAllProjects()
   .then(data => {
     res.send(data);
     console.log(data);
