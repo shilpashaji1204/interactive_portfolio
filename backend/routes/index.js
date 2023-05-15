@@ -6,7 +6,7 @@ const projectQueries = require('../db/queries/projects');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.send(getAllProjects());
-  console.log(projectQueries.getAllProjects());
+  console.log('hello');
 });
 
 module.exports = router;

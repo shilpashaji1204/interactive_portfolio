@@ -5,6 +5,7 @@ const users = require('../db/queries/users');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
+  console.log('hello');
 });
 
 module.exports = router;
