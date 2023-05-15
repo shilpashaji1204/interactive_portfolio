@@ -43,7 +43,7 @@ router.post('/register', function(req, res) {
     password: req.body.password
   }
   //Check if user already exists
-  userQueries.getUserByEmail(email).then(data => {
+  userQueries.getUserByEmail(newUser.email).then(data => {
     if (data[0]) {
       return res.send('Error: this e-mail already in our database.');
     };
@@ -62,4 +62,4 @@ router.get('/work', function(req, res) {
 });
 
 module.exports = router;
-
+3
