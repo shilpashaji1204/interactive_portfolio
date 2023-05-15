@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS messages CASCADE;
+-- CREATE MESSAGES
+CREATE TABLE messages (
+  id SERIAL PRIMARY KEY, 
+  project_id INTEGER REFERENCES projects(id),
+  content TEXT,
+  date TIMESTAMP NOT NULL,
+  sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  receiver_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+);

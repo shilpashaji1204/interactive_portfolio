@@ -6,8 +6,14 @@ const getAllProjects = () => {
 	})
 }
 
-const getProjectsById = id => {
+const getProjectsByUserId = id => {
   return db.query("SELECT * FROM projects WHERE projects.user_id = $1", [id]).then(data => {
+    return data.rows;
+  })
+}
+
+const getProjectsById = id => {
+  return db.query("SELECT * FROM projects WHERE id = $1", [id]).then(data => {
     return data.rows;
   })
 }
@@ -25,4 +31,4 @@ const addProject = (userID, project) => {
     });
 };
 
-module.exports = {addProject, getProjectsById, getAllProjects};
+module.exports = {addProject, getProjectsByUserId, getProjectsById, getAllProjects};
