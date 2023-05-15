@@ -16,5 +16,12 @@ router.get('/register', function(req, res, next) {
 
 //Signup post method goes here
 
+
+/* Work exp page */
+
+router.get('/work', function(req, res) {
+  res.send('exp page');
+});
+
 module.exports = router;
 
