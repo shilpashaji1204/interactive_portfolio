@@ -15,7 +15,8 @@ router.get('/login', function(req, res) {
 router.post('/login', function(req, res) {
   const email = req.body.email;
   const password = req.body.password;
-
+  
+  //check if user exists
   userQueries.getUserByEmail(email).then(data => {
     if (!data[0]) {
       return res.send('Error: email not in database.');
@@ -29,11 +30,30 @@ router.post('/login', function(req, res) {
 
 /* Register */
 router.get('/register', function(req, res) {
+  
   res.send('register page');
 });
 
 //Signup post method goes here
+router.post('/register', function(req, res) {
 
+  newUser = {
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password
+  }
+  //Check if user already exists
+  userQueries.getUserByEmail(email).then(data => {
+    if (data[0]) {
+      return res.send('Error: this e-mail already in our database.');
+    };
+  });
+
+  
+  userQueries.addUser(newUser);
+
+  res.redirect('/');
+});
 
 /* Work exp page */
 

@@ -1,5 +1,5 @@
 // db/queries/users.js
-
+const { pool } = require('../queries/pool');
 const db = require('../../configs/db.config');
 
 const getAllUsers = () => {
@@ -35,9 +35,9 @@ const getUserByEmail = email => {
 };
 
 const addUser = (user) => {
-  const values = [user.name, user.email, user.password, NULL, FALSE];
+  const values = [user.name, user.email, user.password, ''];
   return pool
-    .query(`INSERT INTO users (name, email, password, about, admin) VALUES ($1, $2, $3, $4, $5) RETURNING *;`, values)
+    .query(`INSERT INTO users (name, email, password, about) VALUES ($1, $2, $3, $4) RETURNING *;`, values)
     .then((result) => {
       return result.rows;
     })
