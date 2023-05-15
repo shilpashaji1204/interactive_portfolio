@@ -6,6 +6,7 @@ import Work from './pages/Work';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
+import HomePage from './components/HomePage';
 
 function App() {
 
@@ -15,11 +16,13 @@ function App() {
         <Router>
           <Navbar />
           <Routes>
-            <Route path="/" element = {<About />} />
+            <Route path='/' element = {<HomePage />} />
+            <Route path="/about" element = {<About />} />
             <Route path="/work" element = {<Work />} />
             <Route path="/projects" element = {<Projects />} />
             <Route path="/contact" element = {<Contact />} />
           </Routes>
+          
         </Router>
        
       </div>
