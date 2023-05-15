@@ -26,12 +26,6 @@ const getAboutById = id => {
   })
 }
 
-const getProjectsById = id => {
-  return db.query("SELECT * FROM projects WHERE projects.user_id = $1", [id]).then(data => {
-    return data.rows;
-  })
-}
-
 const addUser = (user) => {
   const values = [user.name, user.email, user.password, NULL, FALSE];
   return pool
@@ -45,4 +39,4 @@ const addUser = (user) => {
     });
 };
 
-module.exports = {getAllUsers, getUserById, getExperienceById, addUser, getAboutById, getProjectsById}
+module.exports = {getAllUsers, getUserById, getExperienceById, addUser, getAboutById}
