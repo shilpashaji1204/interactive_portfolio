@@ -39,4 +39,4 @@ const addUser = (user) => {
     });
 };
 
-module.exports = {getAllUsers, getUserById, getExperienceById, addUser, getAboutById}
+module.exports = {getAllUsers, getUserById, getExperienceById, addUser, getAboutById};
