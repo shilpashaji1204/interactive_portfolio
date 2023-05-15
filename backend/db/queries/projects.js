@@ -1,4 +1,5 @@
 const db = require('../../configs/db.config');
+const { pool } = require('./pool');
 
 const getAllProjects = () => {
 	return db.query("SELECT * FROM projects;").then(data => {
@@ -19,9 +20,9 @@ const getProjectsById = id => {
 }
 
 const addProject = (userID, project) => {
-  const values = [project.title, project.description, project.features, project.tech_stack, image_url, userID];
+  const values = [project.title, project.description, project.features, project.tech_stack, project.image_url, project.project_url, userID];
   return pool
-    .query(`INSERT INTO projects (title, description, features, tech_stack, image_url, project_url, user_id) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;`, values)
+    .query(`INSERT INTO projects (title, description, features, tech_stack, image_url, project_url, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *;`, values)
     .then((result) => {
       return result.rows;
     })
