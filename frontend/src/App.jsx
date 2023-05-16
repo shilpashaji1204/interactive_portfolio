@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import TechStack from './pages/TechStack';
 import HomePage from './components/HomePage';
+import Login from './pages/Login';
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
             <Route path="/projects" element = {<Projects />} />
             <Route path="/contact" element = {<Contact />} />
             <Route path="/techStack" element={<TechStack />} />
-
+            <Route path="/login" element = {<Login />} />
           </Routes>
           
         </Router>
