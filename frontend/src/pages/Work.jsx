@@ -1,6 +1,8 @@
 import React from "react";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css"
+import SchoolIcon from '@mui/icons-material/School';
+import WorkIcon from '@mui/icons-material/Work';
 
 const Work = () => {
 
@@ -10,7 +12,8 @@ const Work = () => {
       <VerticalTimeline lineColor="#ACC18A">
         <VerticalTimelineElement className="vertical-timeline-element--education"
           date="2023"
-          iconStyle={{ background: "#ACC18A" }}
+          iconStyle={{ background: "#ACC18A", color: "black" }}
+          icon={<SchoolIcon />}
         >
           <h3 className="vertical-timeline-element-title">
             Web Development Bootcamp
@@ -23,7 +26,8 @@ const Work = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           date="2022"
-          iconStyle={{ background: "#ACC18A" }}
+          iconStyle={{ background: "#ACC18A", color: "black" }}
+          icon={<WorkIcon />}
         >
           <h3 className="vertical-timeline-element-title">
             Executive Technical Recruiter
@@ -43,7 +47,8 @@ const Work = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           date="2021 - 2022"
-          iconStyle={{ background: "#ACC18A" }}
+          iconStyle={{ background: "#ACC18A", color: "black" }}
+          icon={<WorkIcon />}
         >
           <h3 className="vertical-timeline-element-title">
             Junior Developer
@@ -65,7 +70,8 @@ const Work = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           date="2018 - 2020"
-          iconStyle={{ background: "#ACC18A" }}
+          iconStyle={{ background: "#ACC18A", color: "black" }}
+          icon={<WorkIcon />}
         >
           <h3 className="vertical-timeline-element-title">
             IT Recruiter- Asia Pacific (APAC)
