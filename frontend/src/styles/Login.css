@@ -1,0 +1,103 @@
+#login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-box {
+    width: 380px;
+    height: auto;
+    position: relative;
+    margin: 2% auto;
+    background: #dcedff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 9px #ff61241f;
+  }
+  
+  .button-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+  }
+  
+  .toggle-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    width: 150px;
+  }
+  
+  .toggle-btn.active {
+    background-color: #FFC1CF;
+    color: #fff;
+  }
+  
+  .toggle-btn.inactive {
+    background-color: #dcedff;
+    color: #333;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: none;
+    color: #333;
+    font-size: 16px;
+  }
+  .checkbox-container {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  .check-box {
+    margin-top: 15px;
+    
+  }
+  
+  span {
+    color: #777;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: #FFC1CF;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color:#5D737E;
+  }
+  
+  @media (max-width: 480px) {
+    .form-box {
+      width: 90%;
+    }
+  
+    #btn {
+      width: 60px;
+    }
+  }
+  

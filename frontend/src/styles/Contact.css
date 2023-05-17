@@ -1,0 +1,50 @@
+html, body {
+    height: 100%;
+    background-color: #f0f0f0; 
+  }
+
+*{
+    box-sizing: border-box;
+}
+
+form {
+
+display: block;
+background-color: white;
+box-shadow: 1px 1px 3px 2px #ddd;
+margin: 50px auto;
+max-width: 800px;
+max-height: 700px;
+padding: 40px 60px;
+
+}
+.Contact {
+    background-color: #f0f0f0;
+}
+
+form input, textarea {
+
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 15px auto;
+    padding: 10px;
+    background-color: #f3f3f3;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    
+}
+
+
+form button {
+
+    height: 30px;
+    width: 80px;
+    align-items: center;
+    border: none;
+    background-color: rgb(12, 12, 12);
+    color: #fff;
+    cursor: pointer;
+
+}
+
