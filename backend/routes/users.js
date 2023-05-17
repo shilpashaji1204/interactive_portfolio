@@ -3,6 +3,16 @@ const router = express.Router();
 const userQueries = require('../db/queries/users');
 const { pool } = require('../db/queries/pool');
 
+//Get all users test code
+router.get('/users', function(req, res) {
+  
+  userQueries.getAllUsers()
+  .then(data=> {
+    res.json(data)
+  });
+  
+});
+
 /* Login Page. */
 router.get('/login', function(req, res) {
 
@@ -21,27 +31,29 @@ router.get('/login', function(req, res) {
 
 
 //Login post 
-router.post('/login', function(req, res) {
+router.put('/login', function(req, res) {
   
   const email = req.body.email;
   const password = req.body.password;
   
   //check if user exists
-  userQueries.getUserByEmail(email).then(data => {
+  
+  userQueries.getUserByEmail(email)
+  .then(data => {
     if (!data[0]) {
-      return res.send('Error: email not in database.');
+      return res.json([false, `Error: email not in database: ${email}`]);
     }
 
     if (password != data[0].password) {
-      return res.send('Error: Your password is incorrect!');
+      return res.json([false, 'Error: Your password is incorrect!']);
     }
 
     //set user
     res.cookie("user_id", data[0].id);
-
-    return res.redirect('/');
-
+    return res.json([true, data[0].id]);
   });
+
+ 
 });
 
 /* Register */
@@ -55,11 +67,11 @@ router.get('/register', function(req, res) {
     return res.send('You\re already logged in.');
   }
 
-  res.render('/register');
+  //res.render('/register');
 });
 
 //Signup post method goes here
-router.post('/register', function(req, res) {
+router.put('/register', function(req, res) {
 
   newUser = {
     name: req.body.name,
@@ -70,18 +82,20 @@ router.post('/register', function(req, res) {
   //Check if user already exists
   userQueries.getUserByEmail(newUser.email).then(data => {
     if (data[0]) {
-      return res.send('Error: this e-mail already in our database.');
+      return res.json([false, 'Error: this e-mail already in our database.']);
     };
   });
 
   //Add new user
-  userQueries.addUser(newUser);
+  userQueries.addUser(newUser).then(data => {
+    return res.json(data);
+  })
 
   //Retreice data for new user
-  userQueries.getUserByEmail(newUser.email).then(data => {
-    res.cookie("user_id", data[0].id);
-    return res.redirect('/');
-  });  
+  // userQueries.getUserByEmail(newUser.email).then(data => {
+  //   //res.cookie("user_id", data[0].id);
+  //   return res.json([true, data[0].id]);
+  // });  
 });
 
 //Logout
