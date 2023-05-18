@@ -11,6 +11,7 @@ import HomePage from './components/HomePage';
 import Login from './pages/Login';
 import Registration from './pages/Registration';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 axios.defaults.baseURL = `http://localhost:8080/api`
 
 
