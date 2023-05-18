@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS experience CASCADE;
+-- CREATE EXPERIENCE
+CREATE TABLE experience (
+  id SERIAL PRIMARY KEY,
+  establishment VARCHAR(255),
+  title VARCHAR(255),
+  year VARCHAR(20),
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+);
