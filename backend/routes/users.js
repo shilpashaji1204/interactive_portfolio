@@ -83,13 +83,14 @@ router.put('/register', function(req, res) {
   userQueries.getUserByEmail(newUser.email).then(data => {
     if (data[0]) {
       return res.json([false, 'Error: this e-mail already in our database.']);
+    } else {
+      userQueries.addUser(newUser).then(data => {
+        return res.json([true, data[0].id]);
+      });
     };
   });
 
   //Add new user
-  userQueries.addUser(newUser).then(data => {
-    return res.json([true, data[0].id]);
-  })
 
 });
 

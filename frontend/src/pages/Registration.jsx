@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import '../styles/Registration.css';
 import { addUser } from "../helpers/usersHelpers";
+import Cookies from "js-cookie";
 
 const Registration = () => {
 
@@ -13,11 +14,12 @@ const Registration = () => {
     
     return addUser(name, email, password)
     .then((data) => {
+      console.log(data);
       if(!(data['data'][0])) {
         console.log(data['data'][1]);
       } else {
         setUserId(data['data'][1]);
-        console.log(userId);
+        Cookies.set(userId, data['data'][1]);
       }
     });
   };

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "../styles/Login.css";
 import { validateUser } from "../helpers/usersHelpers";
+import Cookies from 'js-cookie';
 
 const Login = () => {
  
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+    const [userId, setUserId] = useState('');
     const handleSubmit = (event) => {
       event.preventDefault();
 
@@ -17,6 +18,7 @@ const Login = () => {
             console.log(data['data'][1]);
           } else {
             setUserId(data['data'][1]);
+            setIsLoggedIn(true);
             Cookies.set(userId, data['data'][1]);
           };
         }); 
