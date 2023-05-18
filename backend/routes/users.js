@@ -88,14 +88,9 @@ router.put('/register', function(req, res) {
 
   //Add new user
   userQueries.addUser(newUser).then(data => {
-    return res.json(data);
+    return res.json([true, data[0].id]);
   })
 
-  //Retreice data for new user
-  // userQueries.getUserByEmail(newUser.email).then(data => {
-  //   //res.cookie("user_id", data[0].id);
-  //   return res.json([true, data[0].id]);
-  // });  
 });
 
 //Logout
