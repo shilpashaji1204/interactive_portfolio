@@ -13,7 +13,7 @@ export default function useAppData() {
       getUsers,
     ])
     .then((data) => {
-      //console.log(data)
+      return data;
     })
 
   }, []);
