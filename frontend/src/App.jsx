@@ -9,9 +9,14 @@ import Navbar from './components/Navbar';
 import TechStack from './pages/TechStack';
 import HomePage from './components/HomePage';
 import Login from './pages/Login';
+import useAppData from './hooks/useAppData';
+import axios from 'axios';
+axios.defaults.baseURL = `http://localhost:8080/api`
 
 
 function App() {
+
+  useAppData();
 
   return (
     
