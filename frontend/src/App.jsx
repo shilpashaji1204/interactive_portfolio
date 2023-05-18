@@ -9,6 +9,8 @@ import Navbar from './components/Navbar';
 import TechStack from './pages/TechStack';
 import HomePage from './components/HomePage';
 import Login from './pages/Login';
+import ProjectWorks from './pages/ProjectWorks';
+import ShilpaPortfolio from './components/shilpaportfolio';
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
             <Route path="/contact" element = {<Contact />} />
             <Route path="/techStack" element={<TechStack />} />
             <Route path="/login" element = {<Login />} />
+            <Route path='/projectworks' element= {<ProjectWorks />} />
+            <Route path='/shilpaportfolio' element= {<ShilpaPortfolio />} />
           </Routes>
           
         </Router>

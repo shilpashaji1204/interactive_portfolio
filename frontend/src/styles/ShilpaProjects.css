@@ -1,0 +1,14 @@
+.projects {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+  }
+  
+  .projectList {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  
+  

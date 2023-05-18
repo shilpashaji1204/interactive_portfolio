@@ -13,7 +13,7 @@ const HeroSection = () => {
                 This is where we showcase our projects, skills, and experience. 
                 Take a look around and feel free to contact us if you have any questions or would like to work together. 
                 </p>
-                <Link to="/login">
+                <Link to="/projectworks">
                 <button className="hero-button">Get Started</button>
                 </Link>
             </div>
