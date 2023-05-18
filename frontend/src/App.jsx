@@ -1,6 +1,7 @@
 
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+//import { Redirect } from "react-router-dom";
 import About from './pages/About';
 import Work from './pages/Work';
 import Projects from './pages/Projects';

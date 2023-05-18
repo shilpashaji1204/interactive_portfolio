@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/Login.css";
 import { validateUser } from "../helpers/usersHelpers";
 import Cookies from 'js-cookie';
+//import { Redirect } from 'react-router-dom';
 
 const Login = () => {
  
@@ -9,6 +10,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userId, setUserId] = useState('');
+
     const handleSubmit = (event) => {
       event.preventDefault();
 
@@ -19,7 +21,7 @@ const Login = () => {
           } else {
             setUserId(data['data'][1]);
             setIsLoggedIn(true);
-            Cookies.set(userId, data['data'][1]);
+            Cookies.set('userId', data['data'][1]);
           };
         }); 
     };
@@ -27,10 +29,13 @@ const Login = () => {
     const handleLogout = () => {
         setIsLoggedIn(false);
         setUserId("");
+        Cookies.set('userId', null);
       };
 
-    if (isLoggedIn) {
+    if (Cookies.get('userId')) {
         return (
+
+         // <Redirect to='/' />
           <div className="navbar">
             <span>Welcome, {userId}!</span>
             <button onClick={handleLogout}>Logout</button>
