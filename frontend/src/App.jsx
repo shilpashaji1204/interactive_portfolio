@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import TechStack from './pages/TechStack';
 import HomePage from './components/HomePage';
 import Login from './pages/Login';
+import Registration from './pages/Registration';
 import axios from 'axios';
 axios.defaults.baseURL = `http://localhost:8080/api`
 
@@ -28,6 +29,7 @@ function App() {
             <Route path="/contact" element = {<Contact />} />
             <Route path="/techStack" element={<TechStack />} />
             <Route path="/login" element = {<Login />} />
+            <Route path="/registration" element={<Registration />} />
           </Routes>
           
         </Router>
