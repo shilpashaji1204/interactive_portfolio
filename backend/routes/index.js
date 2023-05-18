@@ -13,6 +13,16 @@ router.get('/', function(req, res) {
   
 });
 
+router.get('/projects', function(req, res) {
+
+  userId = req.body.userId;
+
+  projectQueries.getProjectsByUserId(userId)
+  .then(data => {
+    res.json(data);
+  });
+});
+
 /* GET about page */
 // router.get('/about', function(req, res) {
 //   res.send('about page');
