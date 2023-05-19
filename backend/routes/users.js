@@ -17,12 +17,12 @@ router.get('/users', function(req, res) {
 router.get('/login', function(req, res) {
 
   //check if logged in
-  if(req.cookies["user_id"]) {
+  if(req.session.user_id) {
     return res.send('You\'re already logged in.');
   }
 
   const templateVars = {
-    user_id: req.cookies["user_id"],
+    user_id: req.session.user_id,
   }
 
   res.render('/login', templateVars);
@@ -49,8 +49,10 @@ router.put('/login', function(req, res) {
     }
 
     //set user
-    res.cookie("user_id", data[0].id);
-    return res.json([true, data[0].id]);
+    req.session.user_id = data[0].id;
+    //const user_id = req.session.user_id;
+    res.json([true, req.session.user_id]);
+    return req.session.user_idl;
   });
 
  
@@ -60,10 +62,9 @@ router.put('/login', function(req, res) {
 router.get('/register', function(req, res) {
   
   //check if user is logged in
-  const templateVars = {
-    user_id: req.cookies["user_id"],
-  }
-  if(req.cookies["user_id"]) {
+  const user_id = req.session.user_id;
+
+  if(user_id) {
     return res.send('You\re already logged in.');
   }
 
@@ -85,6 +86,7 @@ router.put('/register', function(req, res) {
       return res.json([false, 'Error: this e-mail already in our database.']);
     } else {
       userQueries.addUser(newUser).then(data => {
+        req.session.user_id = data[0].id;
         return res.json([true, data[0].id]);
       });
     };
@@ -97,10 +99,17 @@ router.put('/register', function(req, res) {
 //Logout
 
 router.post('/logout', (req, res) => {
-  res.cookie("user_id", null);
+  req.session.user_id = null;
   res.redirect('/');
 });
 
+// Active user check
+
+router.get('/active', (req, res) => {
+  userQueries.getUserById(req.session.user_id).then((data) => {
+    return res.json(data);
+  });
+});
 /* Work exp page */
 
 router.get('/work', function(req, res) {

@@ -1,21 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Login.css";
-import { validateUser } from "../helpers/usersHelpers";
-import Cookies from 'js-cookie';
+import { validateUser, activeUser } from "../helpers/usersHelpers";
 import { useNavigate } from 'react-router-dom';
 
+
 const Login = () => {
- 
+  
+  let user_id;
+  
+  
+  
+  useEffect(() => {
+    user_id = activeUser()
+      .then((data) => {
+        return data['data'][0];
+    });
+  }, []);
+  if (user_id = null && user_id != "" && user_id != undefined) {
+    return navigate('/');
+  };
+  console.log(user_id)
+
+  //console.log(user_id);
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userId, setUserId] = useState('');
-    // const history = useHistory();
+
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
       event.preventDefault();
-      navigate('/')
       return validateUser(email, password)
       .then((data) => {
         if(!(data['data'][0])) {
@@ -23,8 +39,8 @@ const Login = () => {
         } else {
           setUserId(data['data'][1]);
           setIsLoggedIn(true);
-          Cookies.set('userId', data['data'][1]);
-          useNavigate('/');
+          console.log(data['data'][1]);
+          navigate('/');
           };
         }); 
     };
@@ -32,12 +48,8 @@ const Login = () => {
     const handleLogout = () => {
         setIsLoggedIn(false);
         setUserId("");
-        Cookies.set('userId', null);
       };
-
-    // if (isLoggedIn) {
-    //   return useNavigate('/');
-    // };
+    
 
     return (
         <form id="login" className="input-group-login" onSubmit={handleSubmit}>

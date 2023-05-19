@@ -17,3 +17,12 @@ export function addUser(name, email, password) {
     return (data);
   });
 };
+
+export async function activeUser() {
+
+  return await axios.get('/active')
+  .then((data) => {
+    return data;
+  });
+};
+
