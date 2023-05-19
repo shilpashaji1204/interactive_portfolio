@@ -1,0 +1,16 @@
+.ball-container {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.ball-icons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ball-icons{
+  display: flex;
+  justify-content: space-between;
+
+}
