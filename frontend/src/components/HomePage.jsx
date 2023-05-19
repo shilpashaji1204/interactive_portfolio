@@ -8,6 +8,7 @@ import HeroSection from "../pages/HeroSection";
 
 const HomePage = () => {
 
+    const userName = JSON.parse(localStorage.getItem("user"));
     return (
         <div className='home-page'>
             <HeroSection />

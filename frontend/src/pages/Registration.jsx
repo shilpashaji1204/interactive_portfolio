@@ -1,25 +1,21 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import '../styles/Registration.css';
-import { addUser } from "../helpers/usersHelpers";
 
 const Registration = () => {
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const navigate= useNavigate();
 
+  const [input, setInput] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  
   const handleSubmit = (event) => {
     event.preventDefault();
-    
-    return addUser(name, email, password)
-    .then((data) => {
-      if(!(data['data'][0])) {
-        console.log(data['data'][1]);
-      } else {
-        setUserId(data['data'][1]);
-        console.log(userId);
-      }
-    });
+    localStorage.setItem("user", JSON.stringify(input));
+    navigate("/home");
   };
 
 
@@ -27,22 +23,38 @@ const Registration = () => {
     
     <form id="register" className="input-group-register" onSubmit={handleSubmit}>
       <input
-        type="name"
+        name="name"
+        value={input.name}
+        onChange={(event) => setInput({...input,[event.target.name]:event.target.value,
+        })
+      }
+        type="text"
         className="input-field"
         placeholder="Name"
-        onChange={(event) => setName(event.target.value)}
+        
       />
       <input
+      name="email"
+      value={input.email}
+      onChange={(event) => setInput({...input,[event.target.name]:event.target.value,
+      })
+    }
         type="email"
         className="input-field"
         placeholder="Email Id"
-        onChange={(event) => setEmail(event.target.value)}
+      
       />
       <input
+
+      name="password"
+      value={input.password}
+      onChange={(event) => setInput({...input,[event.target.name]:event.target.value,
+      })
+    }
         type="password"
         className="input-field"
         placeholder="Enter Password"
-        onChange={(event) => setPassword(event.target.value)}
+        
       />
       <div className="checkbox-container">
         <input type="checkbox" className="check-box" />

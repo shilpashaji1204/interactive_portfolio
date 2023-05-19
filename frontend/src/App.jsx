@@ -10,7 +10,9 @@ import TechStack from './pages/TechStack';
 import HomePage from './components/HomePage';
 import Login from './pages/Login';
 import Registration from './pages/Registration';
+import Home from './components/Home';
 import axios from 'axios';
+import ProtectedRoutes from './services/ProtectedRoutes';
 axios.defaults.baseURL = `http://localhost:8080/api`
 
 
@@ -30,6 +32,8 @@ function App() {
             <Route path="/techStack" element={<TechStack />} />
             <Route path="/login" element = {<Login />} />
             <Route path="/registration" element={<Registration />} />
+           
+            <Route path="/home" element = {<Home />} />
           </Routes>
           
         </Router>

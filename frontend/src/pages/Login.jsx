@@ -1,57 +1,61 @@
 import React, { useState } from "react";
 import "../styles/Login.css";
-import { validateUser } from "../helpers/usersHelpers";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
- 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [userId, setUserId] = useState('');
 
-    const handleSubmit = (event) => {
-      event.preventDefault();
+  const navigate = useNavigate();
 
-      return validateUser(email, password)
-        .then((data) => {
-          if(!(data['data'][0])) {
-            console.log(data['data'][1]);
-          } else {
-            setUserId(data['data'][1]);
-            setIsLoggedIn(true);
-          }
-        }); 
-    };
+  const [input, setInput] = useState({
+    email: "",
+    password: "",
+  });
+  
+  
 
-    const handleLogout = () => {
-        setIsLoggedIn(false);
-        setUserId("");
-      };
+  const handleSubmit = (event) => {
+    event.preventDefault(); 
+    const loggeduser = JSON.parse(localStorage.getItem("user"));
+    if(input.email === loggeduser.email && input.password === loggeduser.password)
+    {
+      localStorage.setItem("loggedin", true);
+      navigate('/home')
+    }
+    else {
 
-    if (isLoggedIn) {
-        return (
-          <div className="navbar">
-            <span>Welcome, {userId}!</span>
-            <button onClick={handleLogout}>Logout</button>
-          </div>
-        );
-      }
+      alert("wrong Email or Password");
+    }
+  };
 
-    return (
-        <form id="login" className="input-group-login" onSubmit={handleSubmit}>
+  return (
+    <form id="login" className="input-group-login" onSubmit={handleSubmit}>
       <input
+
+        name="email"
+        value={input.email}
+        onChange={(event) => setInput({
+          ...input, [event.target.name]: event.target.value,
+        })
+        }
         id="email"
         type="email"
         className="input-field"
         placeholder="Email Id"
-        onChange={(event) => setEmail(event.target.value)}
+
       />
       <input
+
+        name="password"
+        value={input.password}
+        onChange={(event) => setInput({
+          ...input, [event.target.name]: event.target.value,
+        })
+        }
         id="password"
         type="password"
         className="input-field"
         placeholder="Enter Password"
-        onChange={(event) => setPassword(event.target.value)}
+        
       />
       <div className="checkbox-container">
         <input type="checkbox" className="check-box" />
