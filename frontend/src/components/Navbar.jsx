@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../styles/Navbar.css";
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from './logo.png';
 
 const Navbar = () => {
     const [expandNavbar, setExpandNavbar] = useState(false);
+    const navigate = useNavigate();
+    const isLoggedIn = JSON.parse(localStorage.getItem("loggedin"));
 
     const location = useLocation();
 
     useEffect(() => {
         setExpandNavbar(false);
     }, [location]);
+
+    const handleLogout = () => {
+        localStorage.removeItem("loggedin");
+        navigate("/login");
+      };
 
     return (
 
@@ -34,8 +41,14 @@ const Navbar = () => {
                 <Link to="/work"> Work </Link>
                 <Link to="/projects"> Projects </Link>
                 <Link to="/contact"> Contact </Link>
-                <Link to="/login"> Login </Link>
-                <Link to="/registration">SignUp</Link>
+                {isLoggedIn ? (
+          <button onClick={handleLogout}>Logout</button>
+        ) : (
+          <>
+            <Link to="/login"> Login </Link>
+            <Link to="/registration">SignUp</Link>
+          </>
+        )}
             </div>
         </div>
     );

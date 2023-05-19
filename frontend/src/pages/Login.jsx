@@ -1,61 +1,44 @@
 import React, { useState } from "react";
 import "../styles/Login.css";
-import { useNavigate } from 'react-router-dom';
+import { validateUser } from "../helpers/usersHelpers";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-
   const navigate = useNavigate();
 
-  const [input, setInput] = useState({
-    email: "",
-    password: "",
-  });
-  
-  
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault(); 
-    const loggeduser = JSON.parse(localStorage.getItem("user"));
-    if(input.email === loggeduser.email && input.password === loggeduser.password)
-    {
-      localStorage.setItem("loggedin", true);
-      navigate('/home')
-    }
-    else {
+  const handleLogin = (event) => {
+    event.preventDefault();
 
-      alert("wrong Email or Password");
-    }
+    validateUser(email, password).then((data) => {
+      if (!data["data"][0]) {
+        console.log(data["data"][1]);
+      } else {
+        localStorage.setItem("loggedin", JSON.stringify(true));
+        navigate("/");
+      }
+    });
   };
 
   return (
-    <form id="login" className="input-group-login" onSubmit={handleSubmit}>
+    <form id="login" className="input-group-login" onSubmit={handleLogin}>
       <input
-
-        name="email"
-        value={input.email}
-        onChange={(event) => setInput({
-          ...input, [event.target.name]: event.target.value,
-        })
-        }
         id="email"
         type="email"
         className="input-field"
         placeholder="Email Id"
-
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
       />
       <input
-
-        name="password"
-        value={input.password}
-        onChange={(event) => setInput({
-          ...input, [event.target.name]: event.target.value,
-        })
-        }
         id="password"
         type="password"
         className="input-field"
         placeholder="Enter Password"
-        
+        value={password}
+        onChange={(event) => setPassword(event.target.value)}
       />
       <div className="checkbox-container">
         <input type="checkbox" className="check-box" />
