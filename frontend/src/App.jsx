@@ -11,6 +11,7 @@ import HomePage from './components/HomePage';
 import Login from './pages/Login';
 import Registration from './pages/Registration';
 import axios from 'axios';
+import SampleProjects from './pages/SampleProjects';
 axios.defaults.baseURL = `http://localhost:8080/api`
 
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/about" element = {<About />} />
             <Route path="/work" element = {<Work />} />
             <Route path="/projects" element = {<Projects />} />
+            <Route path="/sampleprojects" element = {<SampleProjects />} />
             <Route path="/contact" element = {<Contact />} />
             <Route path="/techStack" element={<TechStack />} />
             <Route path="/login" element = {<Login />} />

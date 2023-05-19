@@ -40,6 +40,9 @@ const Navbar = () => {
                 <Link to="/about"> About </Link>
                 <Link to="/work"> Work </Link>
                 <Link to="/projects"> Projects </Link>
+                {isLoggedIn && (
+          <Link to="/sampleprojects">Portfolio</Link>
+        )}
                 <Link to="/contact"> Contact </Link>
                 {isLoggedIn ? (
           <button onClick={handleLogout}>Logout</button>

@@ -11,7 +11,7 @@ const HeroSection = () => {
                 <h1 className="hero-heading">Welcome to Our Interactive Portfolio!</h1>
                 <p className="hero-para">
                 This is where we showcase our projects, skills, and experience. 
-                Take a look around and feel free to contact us if you have any questions or would like to work together. 
+                Take a look around and create your own Portfolio. Contact us if you have any questions or would like to work together. 
                 </p>
                 <Link to="/login">
                 <button className="hero-button">Get Started</button>
