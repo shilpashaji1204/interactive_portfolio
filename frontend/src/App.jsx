@@ -7,6 +7,7 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import TechStack from './pages/TechStack';
+import ThreeD from "./pages/background"
 
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
             <Route path="/projects" element = {<Projects />} />
             <Route path="/contact" element = {<Contact />} />
             <Route path="/techStack" element={<TechStack />} />
+            <Route path="/background" element={<ThreeD />} />
+
 
           </Routes>
         </Router>
