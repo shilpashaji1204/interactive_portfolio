@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from "react";
-import '../styles/ProjectTable.css';
+import '../styles/ProjectTable.css'
 import { nanoid } from 'nanoid';
 import data from "../mock-data.json";
 import EditableRow from "../components/EditableRow";
@@ -135,8 +135,11 @@ const ProjectTable = () => {
     // }
 
     return (
+
         <div className="app-container">
         {/* <form onSubmit={handleEditFormSubmit}>
+
+
             <table>
                 <thead>
                     <tr>
@@ -193,7 +196,7 @@ const ProjectTable = () => {
             </table>
             </form> */}
             <h2>Add Project</h2>
-            <form onSubmit={handleAddFormSubmit}>
+            <form onSubmit={handleAddFormSubmit} >
                 <input
                     type="text"
                     name="title"
