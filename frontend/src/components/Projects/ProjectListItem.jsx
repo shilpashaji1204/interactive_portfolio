@@ -1,4 +1,5 @@
 import React from "react";
+import "./ProjectList.css";
 
 export default function ProjectListItem(props) {
 
@@ -11,12 +12,12 @@ export default function ProjectListItem(props) {
       <h1>{title}</h1>
       <h2>{description}</h2>
       <p>{features}</p>
-        <h3> Tech Stack: {tech_stack} </h3>
-        <h3> Links: </h3>
-      <ul> 
-        <li>{project_url} </li>
-        <li>{image_url} </li>
-      </ul>
+        <h3> Tech Stack: </h3>
+        <p>{tech_stack}</p>
+      <h3> Github Repo: {project_url} </h3>
+      <div>
+        <img className="image" src={image_url}/>
+      </div>
     </div>
   )
 };
