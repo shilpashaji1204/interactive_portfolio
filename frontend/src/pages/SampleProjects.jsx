@@ -1,31 +1,30 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import { getUserProjects } from "../helpers/projectsHelpers";
+import ProjectList from "../components/Projects/ProjectList";
+import useAppData from "../hooks/useAppData";
 
-const SampleProjects = () => {
+const SampleProjects = (props) => {
 
-  // const [user, setUser] = useState(null);
+      // const [projectData, setProjectData] = useState([]);
+       //const user_id = localStorage.getItem("user_id");
+      
+      // //const dataBuffer = (
+      // getUserProjects(user_id).then((data) => {
+      //   console.log(Array.isArray(data['data']));
+      //   return (data['data']);
+      // })
+      // //)
 
-    // useEffect(() => {
-      // const currentUser = JSON.parse(localStorage.getItem('loggedin'));
-      // if (currentUser) {
-      //  setUser(currentUser);
-      // }
+      // setProjectData(dataBuffer);
 
-      const user_id = localStorage.getItem("user_id");
-      //console.log(user_id);
-      getUserProjects(user_id).then((data) => {
-        console.log(data);
-      })
-    // }, []);
-
-    
+  const {projects, state} = useAppData();
 
     return (
 
         <div>
             <h1>Portfolio</h1>
-
+            <ProjectList projectData={projects}/>
         </div>
     )
 }
