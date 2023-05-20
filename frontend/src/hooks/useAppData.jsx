@@ -15,6 +15,8 @@ export default function useAppData() {
   });
 
   const [projects, setProjects] = useState([]);
+  const [joshProjects, setJoshProjects] = useState([]);
+  const [shilpaProjects, setShilpaProjects] = useState([]);
 
   useEffect(() => {
     const user_id = localStorage.getItem("user_id");
@@ -22,8 +24,17 @@ export default function useAppData() {
     getUserProjects(user_id).then((data) => {
       setProjects(data['data']);
     })
+
+    getUserProjects(5).then((data) => {
+      setJoshProjects(data['data']);
+    })
+
+    getUserProjects(7).then((data) => {
+      setShilpaProjects(data['data']);
+    })
+
   }, []);
 
-  return { projects, state };
+  return { projects, state, joshProjects, shilpaProjects };
   
 };

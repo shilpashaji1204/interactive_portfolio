@@ -4,7 +4,7 @@ import "react-vertical-timeline-component/style.min.css"
 import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
 
-const Work = () => {
+const Rorywork = () => {
 
   return (
 
@@ -16,7 +16,7 @@ const Work = () => {
           icon={<SchoolIcon />}
         >
           <h3 className="vertical-timeline-element-title">
-          Full-stack Web Development
+          Diploma in Full-stack Web Development
           </h3>
           <h4 className="vertical-timeline-element-subtitle">
           Lighthouse Labs, Toronto, Canada
@@ -25,65 +25,61 @@ const Work = () => {
 
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          date="2022"
+          date="2022 - 2023"
           iconStyle={{ background: "#ACC18A", color: "black" }}
           icon={<WorkIcon />}
         >
           <h3 className="vertical-timeline-element-title">
-            Executive Technical Recruiter
+          Freelance Digital Marketer 	
           </h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            PlanIT Search, Toronto, Canada
-          </h4>
           <p>
             <ul>
-              <li> Partnered with the team to deliver quality direct sourced candidates for IT, Finance and Government Roles using Applicant Tracking Systems (Bullhorn) </li>
-              <li> Conducted interviews, feedback sessions and final selection of candidates </li>
-              <li> Continually built a talent pipeline to solve future business needs with a focus on specific patterns of performance </li>
+              <li> Developed and managed online marketing campaigns for a variety of clients with a focus on real estate. </li>
+              <li> Increased customer click-through rates by creating engaging and informative web content. </li>
+              <li> Project managing the entirety of digital marketing campaigns from initial consultation to on-time delivery. </li>
             </ul>
           </p>
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          date="2021 - 2022"
+          date="2019 - 2021"
           iconStyle={{ background: "#ACC18A", color: "black" }}
           icon={<WorkIcon />}
         >
           <h3 className="vertical-timeline-element-title">
-            Junior Developer
+            Realtor
           </h3>
           <h4 className="vertical-timeline-element-subtitle">
-            Center for development of advance computing (C-DAC), Trivandrum, India
+          Re/Max in Paradise, Dominican Republic
           </h4>
           <p>
             <ul>
-              <li> Involved in analysis, specification, design, and implementation and testing phases of Software Development Life Cycle (SDLC), using Agile methodology to develop applications </li>
-              <li> Analyzed business requirements & prepared technical documents </li>
-              <li> Enhanced user experience and accomplished webpage objectives by creating site structure, landing pages, navigation, page optimization and graphic integration using HTML, CSS, JavaScript and Bootstrap </li>
-              <li> Designed front-end of the website such as embedded graphics, and interactive documents using JavaScript, XML, HTML and CSS
-              </li>
+              <li> Sold residential and commercial real estate in the Dominican Republic. </li>
+              <li> Built a successful property management company for the brokerage. </li>
+              <li> Tasked with the role of office administrator.</li>
             </ul>
           </p>
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          date="2018 - 2020"
+          date="2015 - 2019"
           iconStyle={{ background: "#ACC18A", color: "black" }}
           icon={<WorkIcon />}
         >
           <h3 className="vertical-timeline-element-title">
-            IT Recruiter- Asia Pacific (APAC)
+          Business Development Manager
           </h3>
           <h4 className="vertical-timeline-element-subtitle">
-            Silverlink Technologies Pvt. Ltd.-Mumbai, India
+          Duggal Team, Re/Max 2000, Toronto, Ontario
           </h4>
           <p>
             <ul>
-              <li> Partnered with the team to deliver quality direct sourced candidates for IT, Finance and Government Roles using Applicant Tracking Systems (Bullhorn) </li>
-              <li> Conducted interviews, feedback sessions and final selection of candidates </li>
-              <li> Continually built a talent pipeline to solve future business needs with a focus on specific patterns of performance </li>
+              <li> Responsible for hiring and training realtors.  </li>
+              <li> Led daily sales training sessions </li>
+              <li> Developed an in-house mortgage brokerage to increase the companies bottom line.</li>
+              <li>Key member of a Diamond Award winning team - the companies highest award.</li>
             </ul>
           </p>
         </VerticalTimelineElement>
@@ -93,4 +89,4 @@ const Work = () => {
   )
 }
 
-export default Work
+export default Rorywork

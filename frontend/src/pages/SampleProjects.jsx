@@ -1,19 +1,29 @@
-import { useState, useEffect } from "react";
 import React from "react";
-import { getUserProjects } from "../helpers/projectsHelpers";
-import ProjectList from "../components/Projects/ProjectList";
-import useAppData from "../hooks/useAppData";
+import ProjectItem from "../components/ProjectItem";
+import { projectList } from "../helpers/ProjectList";
+import { Link } from "react-router-dom";
+import AddIcon from '@mui/icons-material/Add';
+import "../styles/SampleProjects.css";
 
-const SampleProjects = (props) => {
-
-  const {projects, state} = useAppData();
+const SampleProjects = () => {
 
     return (
-      <div>
-          <h1>Portfolio</h1>
-          <ProjectList projectData={projects}/>
-      </div>
-    )
-};
 
-export default SampleProjects;
+        <div className="projects">
+            <h1>Portfolio</h1>
+            <div className="projectList"></div>
+            {projectList.map((project) => (
+          <Link to={project.link} key={project.name}>
+            <ProjectItem name={project.name} image={project.image} />
+          </Link>
+        ))}
+        <div className="addIconContainer">
+        <Link to="/add-project">
+        <AddIcon className="addIcon" style={{ fontSize: 60 }} />
+        </Link>
+      </div>
+      </div>
+       
+    )
+}
+export default SampleProjects
