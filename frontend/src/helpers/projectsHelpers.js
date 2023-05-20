@@ -13,11 +13,14 @@ export function getUserProjects(user_id) {
  
 };
 
-export function addProject(project_info) {
+export function addProject(user_id, project_info) {
   
-  return axios.put('/projects/new', {project_info})
+  return axios.post('/projects/new', {user_id, project_info})
   .then((data) => {
     return data;
+  })
+  .catch((e) => {
+    return ('Error message: ', e);
   });
 
 };

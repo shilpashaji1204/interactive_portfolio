@@ -4,14 +4,14 @@ const projectQueries = require('../db/queries/projects');
 
 /* GET home page. */
 
-// router.put('/projects', function(req, res) {
+router.get('/projects', function(req, res) {
 
-//   projectQueries.getAllProjects()
-//   .then(data => {
-//     res.json(data);
-//   });
+  projectQueries.getAllProjects()
+  .then(data => {
+    res.json(data);
+  });
   
-// });
+});
 
 router.put('/projects', function(req, res) {
 
@@ -23,19 +23,14 @@ router.put('/projects', function(req, res) {
   });
 });
 
-router.put('projects/new', function(req, res) {
+// router.get('/projects/new', function(req, res) {
 
-  const project_info = req.body.project_info;
+// });
 
-  const userId = project_info.user_id;
-  const project = {
-    title: project_info.title,
-    description: project_info.description,
-    features: project_info.features,
-    tech_stack: project_info.tech_stack,
-    image_url: project_info.image_url,
-    project_url: project_info.project_url
-  };
+router.post('/projects/new', function(req, res) {
+
+  const project = req.body.project_info;
+  const userId = req.body.user_id;
 
   projectQueries.addProject(userId, project)
   .then((data) => {

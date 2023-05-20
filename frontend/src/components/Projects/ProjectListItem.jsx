@@ -3,8 +3,6 @@ import "./ProjectList.css";
 
 export default function ProjectListItem(props) {
 
-  console.log(props);
-
   const { title, description, features, tech_stack, project_url, image_url } = props;
 
   return (

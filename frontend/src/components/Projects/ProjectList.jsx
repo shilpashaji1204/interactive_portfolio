@@ -3,8 +3,6 @@ import ProjectListItem from './ProjectListItem';
 
 export default function ProjectList(props) {
 
-  console.log(props);
-
   const projectArray = props.projectData.map(project => {
 
     return (
