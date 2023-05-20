@@ -4,7 +4,7 @@ const projectQueries = require('../db/queries/projects');
 
 /* GET home page. */
 
-router.get('/', function(req, res) {
+router.get('/projects', function(req, res) {
 
   projectQueries.getAllProjects()
   .then(data => {
@@ -13,14 +13,30 @@ router.get('/', function(req, res) {
   
 });
 
-router.get('/projects', function(req, res) {
+router.put('/projects', function(req, res) {
 
-  userId = req.body.userId;
+  const user_id = req.body.user_id;
 
-  projectQueries.getProjectsByUserId(userId)
+  projectQueries.getProjectsByUserId(user_id)
   .then(data => {
-    res.json(data);
+    return res.json(data);
   });
+});
+
+// router.get('/projects/new', function(req, res) {
+
+// });
+
+router.post('/projects/new', function(req, res) {
+
+  const project = req.body.project_info;
+  const userId = req.body.user_id;
+
+  projectQueries.addProject(userId, project)
+  .then((data) => {
+    return res.json(data);
+  });
+
 });
 
 /* GET about page */

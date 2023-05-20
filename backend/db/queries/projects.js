@@ -1,5 +1,5 @@
 const db = require('../../configs/db.config');
-const { pool } = require('./pool');
+const { pool } = require('../queries/pool');
 
 const getAllProjects = () => {
 	return db.query("SELECT * FROM projects;").then(data => {
@@ -7,7 +7,7 @@ const getAllProjects = () => {
 	})
 }
 
-const getProjectsByUserId = id => {
+const getProjectsByUserId = (id) => {
   return db.query("SELECT * FROM projects WHERE projects.user_id = $1", [id]).then(data => {
     return data.rows;
   })
