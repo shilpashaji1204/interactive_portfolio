@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export function getrojects(userId) {
+export function getUserProjects(user_id) {
 
-  return axios.get(`/projects`, {userId})
+  return axios.put('/projects', {user_id})
   .then((data) => {
-    return (data);
-  });
+    return data;
+  })
+  .catch((e) => {
+    console.log(e);
+  })
  
 };
 
