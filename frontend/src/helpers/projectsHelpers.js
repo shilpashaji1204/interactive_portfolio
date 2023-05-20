@@ -9,7 +9,16 @@ export function getUserProjects(user_id) {
   })
   .catch((e) => {
     console.log(e);
-  })
+  });
  
+};
+
+export function addProject(project_info) {
+  
+  return axios.put('/projects/new', {project_info})
+  .then((data) => {
+    return data;
+  });
+
 };
 

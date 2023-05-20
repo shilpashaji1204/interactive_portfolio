@@ -19,11 +19,11 @@ export default function useAppData() {
   useEffect(() => {
     const user_id = localStorage.getItem("user_id");
       
-      
-      getUserProjects(user_id).then((data) => {
-        setProjects(data['data']);
-      })
+    getUserProjects(user_id).then((data) => {
+      setProjects(data['data']);
+    })
   }, []);
 
   return { projects, state };
+  
 };
