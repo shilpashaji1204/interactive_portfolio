@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export function getrojects(userId) {
+export function getProjects(userId) {
 
   return axios.get(`/projects`, {userId})
   .then((data) => {
