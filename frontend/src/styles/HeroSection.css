@@ -1,5 +1,35 @@
 .container {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 450px; 
+    margin-bottom: 10px; 
+  }
+  
+  .section-hero-data {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 1px; 
+  }
+  
+  .section-hero-animation {
+    margin-top: 1px; 
+    margin-bottom: 220px; 
+  }
+  
+
+
+
+
+
+
+/* original css below */
+
+/* 
+.container {
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -25,4 +55,5 @@
 .hero-button:hover {
     background-color: #8A95A5;
     color: black;
-  }
+  } */
+

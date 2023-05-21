@@ -13,6 +13,10 @@ import Registration from './pages/Registration';
 import axios from 'axios';
 import SampleProjects from './pages/SampleProjects';
 axios.defaults.baseURL = `http://localhost:8080/api`
+import Computer from './pages/Computer';
+import ProjectAnimation from './pages/ProjectAnimation';
+import Index from './pages/background/index';
+// import background from './pages/background/background';
 
 
 function App() {
@@ -32,6 +36,11 @@ function App() {
             <Route path="/techStack" element={<TechStack />} />
             <Route path="/login" element = {<Login />} />
             <Route path="/registration" element={<Registration />} />
+            <Route path="/computer" element = {<Computer />} />
+            <Route path="/projectanimation" element = {<ProjectAnimation />} />
+            <Route path="/index" element = {<Index />} />
+            {/* <Route path="/background" element = {<background />} /> */}
+
           </Routes>
           
         </Router>

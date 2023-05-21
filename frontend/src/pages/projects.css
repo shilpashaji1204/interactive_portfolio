@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  
 }
 
 .projects {
@@ -11,6 +13,7 @@
   width: 100%;
   max-width: 800px;
   margin-top: 40px;
+  /* margin: 100px; */
 }
 
 .project-card {
@@ -20,6 +23,7 @@
   text-align: center;
   width: 250px;
   margin-bottom: 20px;
+  margin: 5px;
 
 }
 
@@ -27,14 +31,37 @@
   width: 200px;
   height: 200px;
   margin-bottom: 10px;
+
 }
 
 .project-description {
   margin-top: 10px;
   padding: 10px;
   font-size: 30px;
+  } 
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #000;
+    color: #fff;
   }
 
-  .project-container h2 {
-    font-size: 80px; /* Adjust the font size as needed */
-  }
+  /* .project-container h2 {
+    font-size: 80px; 
+   }  */
+
