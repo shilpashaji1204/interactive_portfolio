@@ -5,7 +5,7 @@ import "../styles/ShilpaPortfolio.css";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import ProjectForm from "../pages/ProjectForm";
+
 import ProjectTable from "../pages/ProjectTable";
 
 
@@ -55,8 +55,7 @@ const ShilpaPortfolio = () => {
                 </ol>
             </div>
             <Work />
-          
-            <ProjectTable />
+          <Contact />
           
         </div>
     )

@@ -5,8 +5,17 @@ import Contact from "../pages/Contact";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import ProjectList from "./Projects/ProjectList";
+import { useState } from "react";
+import useAppData from "../hooks/useAppData";
+import ProjectTable from "../pages/ProjectTable";
 
 const JoshPortfolio = () => {
+
+
+    const {joshProjects} = useAppData();
+    const currentUser = localStorage.getItem("user_id");
+    const editAuth = (currentUser === "5");
 
     return (
 
@@ -51,6 +60,10 @@ const JoshPortfolio = () => {
                 </ol>
             </div>
             <Joshwork />
+            <ProjectList projectData={joshProjects} />
+            {editAuth && (
+              <ProjectTable />
+            )}
             <Contact />
         </div>
     )

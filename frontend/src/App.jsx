@@ -16,7 +16,7 @@ import ShilpaPortfolio from './components/shilpaportfolio';
 import JoshPortfolio from './components/JoshPortfolio';
 import Joshwork from './pages/Joshwork';
 import RoryPortfolio from './components/RoryPortfolio';
-import ProjectForm from './pages/ProjectForm';
+
 import ProjectTable from './pages/ProjectTable';
 axios.defaults.baseURL = `http://localhost:8080/api`
 
@@ -41,7 +41,6 @@ function App() {
             <Route path='/shilpaportfolio' element= {<ShilpaPortfolio />} />
             <Route path='/joshportfolio' element= {<JoshPortfolio />} />
             <Route path='/roryportfolio' element= {<RoryPortfolio />} />
-            <Route path="/projectform" element = {<ProjectForm />} />
             <Route path="/projecttable" element = {<ProjectTable />} />
           </Routes>
           

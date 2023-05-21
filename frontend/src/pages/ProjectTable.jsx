@@ -3,11 +3,16 @@ import '../styles/ProjectTable.css'
 import { nanoid } from 'nanoid';
 import data from "../mock-data.json";
 import EditableRow from "../components/EditableRow";
+import { addProject } from "../helpers/projectsHelpers";
 
 
 const ProjectTable = () => {
 
     const [contacts, setContacts] = useState(data);
+
+    
+
+    const currentUser = localStorage.getItem("user_id");
 
     const [addFormData, setAddFormData] = useState({
 
@@ -20,19 +25,19 @@ const ProjectTable = () => {
 
     });
 
-    const [editFormData, setEditFormData] = useState({
-        title: '',
-        description: '',
-        feature: '',
-        techstack: '',
-        imageurl: '',
-        projecturl: ''
+    // const [editFormData, setEditFormData] = useState({
+    //     title: '',
+    //     description: '',
+    //     feature: '',
+    //     techstack: '',
+    //     imageurl: '',
+    //     projecturl: ''
 
-    })
+    // })
 
-    const [editContactId, setEditContactId] = useState(null);
+    // const [editContactId, setEditContactId] = useState(null);
 
-    const handleAddFromChange = (event) => {
+    const handleAddFormChange = (event) => {
         event.preventDefault();
 
         const fieldName = event.target.getAttribute('name');
@@ -44,90 +49,97 @@ const ProjectTable = () => {
         setAddFormData(newFormData);
     };
 
-    const handleEditFormChange = (event) => {
-        event.preventDefault();
+    // const handleEditFormChange = (event) => {
+    //     event.preventDefault();
 
-        const fieldName = event.target.getAttribute("name");
-        const fieldValue = event.target.value;
+    //     const fieldName = event.target.getAttribute("name");
+    //     const fieldValue = event.target.value;
 
-        const newFormData = { ...editFormData }
-        newFormData[fieldName] = fieldValue;
+    //     const newFormData = { ...editFormData }
+    //     newFormData[fieldName] = fieldValue;
 
-        setEditFormData(newFormData);
-    }
+    //     setEditFormData(newFormData);
+    // }
 
     const handleAddFormSubmit = (event) => {
         event.preventDefault();
 
-        const newContact = {
-            id: nanoid(),
+        const newProject = {
             title: addFormData.title,
             description: addFormData.description,
-            feature: addFormData.feature,
-            techstack: addFormData.techstack,
-            imageurl: addFormData.imageurl,
-            projecturl: addFormData.projecturl,
-
+            features: addFormData.feature,
+            tech_stack: addFormData.techstack,
+            image_url: addFormData.imageurl,
+            project_url: addFormData.projecturl,
         };
 
-        const newContacts = [...contacts, newContact];
-        setContacts(newContacts);
+        const user_id = Number(currentUser);
+        console.log(newProject.title, newProject.features);
+
+        addProject(user_id, newProject).then((data) => {
+          console.log(data);
+        });
+        // const newContacts = [...contacts, newContact];
+        // setContacts(newContacts);
     };
 
-    const handleEditFormSubmit = (event) => {
-        event.preventDefault();
+    // const handleEditFormSubmit = (event) => {
+    //     event.preventDefault();
 
-        const editedContact = {
-            id: editContactId,
-            title: editFormData.title,
-            description: editFormData.description,
-            feature: editFormData.feature,
-            techstack: editFormData.techstack,
-            imageurl: editFormData.imageurl,
-            projecturl: editFormData.projecturl,
-        }
+    //     const editedContact = {
+    //         id: editContactId,
+    //         title: editFormData.title,
+    //         description: editFormData.description,
+    //         feature: editFormData.feature,
+    //         techstack: editFormData.techstack,
+    //         imageurl: editFormData.imageurl,
+    //         projecturl: editFormData.projecturl,
+    //     }
 
-        const newContacts = [...contacts];
+    //     const newContacts = [...contacts];
 
-        const index = contacts.findIndex((contact) => contact.id === editContactId);
-        newContacts[index] = editedContact;
+    //     const index = contacts.findIndex((contact) => contact.id === editContactId);
+    //     newContacts[index] = editedContact;
 
-        setContacts(newContacts);
-        setEditContactId(null);
-    }
+    //     setContacts(newContacts);
+    //     setEditContactId(null);
+    // }
 
-    const handleEditClick = (event, contact) => {
-        event.preventDefault();
-        setEditContactId(contact.id);
+    // const handleEditClick = (event, contact) => {
+    //     event.preventDefault();
+    //     setEditContactId(contact.id);
 
-        const formValues = {
-            title: contact.title,
-            description: contact.description,
-            feature: contact.feature,
-            techstack: contact.techstack,
-            imageurl: contact.imageurl,
-            projecturl: contact.projecturl,
-        };
+    //     const formValues = {
+    //         title: contact.title,
+    //         description: contact.description,
+    //         feature: contact.feature,
+    //         techstack: contact.techstack,
+    //         imageurl: contact.imageurl,
+    //         projecturl: contact.projecturl,
+    //     };
 
-        setEditFormData(formValues);
-    };
+    //     setEditFormData(formValues);
+    // };
 
-    const handleCancelClick = () => {
-        setEditContactId(null);
-    }
+    // const handleCancelClick = () => {
+    //     setEditContactId(null);
+    // }
 
-    const handleDeleteClick = (contactId) => {
-        const newContacts = [...contacts];
+    // const handleDeleteClick = (contactId) => {
+    //     const newContacts = [...contacts];
 
-        const index = contacts.findIndex((contact)=> contact.id === contactId); 
-        newContacts.splice(index, 1);
+    //     const index = contacts.findIndex((contact)=> contact.id === contactId); 
+    //     newContacts.splice(index, 1);
 
-        setContacts(newContacts); 
-    }
+    //     setContacts(newContacts); 
+    // }
 
     return (
-        <div className="project-table-container">
-        <form onSubmit={handleEditFormSubmit}>
+
+        <div className="app-container">
+        {/* <form onSubmit={handleEditFormSubmit}>
+
+
             <table>
                 <thead>
                     <tr>
@@ -182,7 +194,7 @@ const ProjectTable = () => {
 
                 </tbody>
             </table>
-            </form>
+            </form> */}
             <h2>Add Project</h2>
             <form onSubmit={handleAddFormSubmit} >
                 <input
@@ -190,42 +202,42 @@ const ProjectTable = () => {
                     name="title"
                     required="required"
                     placeholder="Title"
-                    onChange={handleAddFromChange}
+                    onChange={handleAddFormChange}
                 />
                 <input
                     type="text"
                     name="description"
                     required="required"
                     placeholder="Description"
-                    onChange={handleAddFromChange}
+                    onChange={handleAddFormChange}
                 />
                 <input
                     type="text"
                     name="feature"
                     required="required"
                     placeholder="Feature"
-                    onChange={handleAddFromChange}
+                    onChange={handleAddFormChange}
                 />
                 <input
                     type="text"
-                    name="teckstack"
+                    name="techstack"
                     required="required"
                     placeholder="Tech_stack"
-                    onChange={handleAddFromChange}
+                    onChange={handleAddFormChange}
                 />
                 <input
                     type="text"
                     name="imageurl"
                     required="required"
                     placeholder="Image_url"
-                    onChange={handleAddFromChange}
+                    onChange={handleAddFormChange}
                 />
                 <input
                     type="text"
                     name="projecturl"
                     required="required"
                     placeholder="Project_url"
-                    onChange={handleAddFromChange}
+                    onChange={handleAddFormChange}
                 />
                 <button type="submit">Add</button>
             </form>
