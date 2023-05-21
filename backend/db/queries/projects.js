@@ -33,12 +33,17 @@ const addProject = (userID, project) => {
 };
 
 const editProject = (project) => {
-  const values = [project.description, project.features, project.tech_stack, project.image_url, project.project_url, project.id];
+  //const values = [project.description, project.features, project.tech_stack, project.image_url, project.project_url, project.id];
+  const id = [project.id]
   return pool
-    .query(`UPDATE projects SET (description, features, tech_stack, image_url, project_url) WHERE id = $6 VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`, values)
+    .query(`UPDATE projects SET project_url = 'new' WHERE id = $1 RETURNING *`, [id])
     .then((result) => {
       return result.rows;
     })
+    .catch((err) => {
+      console.log('add project error;', err.message);
+      return err;
+    });
 }
 
 module.exports = {addProject, getProjectsByUserId, getProjectsById, getAllProjects, editProject};
