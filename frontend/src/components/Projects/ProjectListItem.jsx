@@ -7,7 +7,8 @@ export default function ProjectListItem(props) {
 
   const navigate = useNavigate();
   const currentUser = localStorage.getItem("user_id");
-  const editAuth = localStorage.getItem("auth");
+  //const editAuth = localStorage.getItem("auth");
+  const editAuth = props.editAuth; 
   const { id, title, description, features, tech_stack, project_url, image_url } = props;
 
   const handleEdit = (event) => {

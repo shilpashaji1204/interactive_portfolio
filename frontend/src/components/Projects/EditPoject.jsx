@@ -1,25 +1,36 @@
 import React from "react";
-import { getProject } from "../../helpers/projectsHelpers";
-import { useState, useEffect } from "react";
+import useAppData from "../../hooks/useAppData";
 
 export default function EditProject() {
 
-  const [project, setProject] = useState([]);
+  const {project} = useAppData();
+
+  //const currentProject = localStorage.getItem("currentProject");
+  console.log(project.title);
 
   
-  useEffect(() => {
-    const project_id = Number(localStorage.getItem("project_id"));
+  const {
+    title,
+    description,
+    features,
+    tech_stack,
+    project_url, 
+    image_url,
+  } = project;
 
-    getProject(project_id).then((data) => {
-      setProject(data);
-    });
-  }, []);
-
-  console.log(project);
 
   return (
-    <div>
-      {'project'}
-    </div>
+     <div>
+       <h1>{title}</h1>
+        <table>
+          <thead>
+            <th>{description}</th>
+            <th>{features}</th>
+            <th>{tech_stack}</th>
+            <th>{project_url}</th>
+            <th>{image_url}</th>
+          </thead>
+        </table>
+     </div>
   )
 };

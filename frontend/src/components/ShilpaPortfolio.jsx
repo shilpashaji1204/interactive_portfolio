@@ -15,6 +15,7 @@ const ShilpaPortfolio = () => {
     const {shilpaProjects} = useAppData();
     const currentUser = localStorage.getItem("user_id");
     const editAuth = (currentUser === "7");
+    console.log(editAuth);
     localStorage.setItem("auth", editAuth);
 
     return (

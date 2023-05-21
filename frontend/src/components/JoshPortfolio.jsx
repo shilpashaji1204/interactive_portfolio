@@ -16,6 +16,7 @@ const JoshPortfolio = () => {
     const {joshProjects} = useAppData();
     const currentUser = localStorage.getItem("user_id");
     const editAuth = (currentUser === "5");
+    console.log(editAuth);
     localStorage.setItem("auth", editAuth);
     
     return (
@@ -61,7 +62,7 @@ const JoshPortfolio = () => {
                 </ol>
             </div>
             <Joshwork />
-            <ProjectList projectData={joshProjects} />
+            <ProjectList projectData={joshProjects} editAuth={editAuth} />
             {editAuth && (
               <AddProject />
             )}

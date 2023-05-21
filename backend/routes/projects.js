@@ -23,7 +23,7 @@ router.put('/projects', function(req, res) {
   });
 });
 
-router.get('/project', function(req,res) {
+router.put('/project', function(req,res) {
 
   const project_id = req.body.project_id;
 
