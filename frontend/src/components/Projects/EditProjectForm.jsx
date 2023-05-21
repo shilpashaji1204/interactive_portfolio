@@ -47,6 +47,9 @@ export default function EditProjectForm(props) {
     editProject(editedProject).then((data) => {
       console.log(data);
     });
+
+    window.location.reload(false);
+    
   };
 
   return (

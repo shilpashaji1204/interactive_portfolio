@@ -62,6 +62,7 @@ const JoshPortfolio = () => {
                 </ol>
             </div>
             <Joshwork />
+            <h1> PROJECTS </h1>
             <ProjectList projectData={joshProjects} editAuth={editAuth} />
             {editAuth && (
               <AddProject />
