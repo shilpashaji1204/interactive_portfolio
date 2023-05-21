@@ -17,8 +17,6 @@ const Login = () => {
         console.log(data["data"][1]);
       } else {
         localStorage.setItem("loggedin", JSON.stringify(true));
-        localStorage.setItem("user_id", (data['data'][1]));
-        //console.log(data);
         navigate("/");
       }
     });
