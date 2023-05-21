@@ -3,7 +3,6 @@ const router = express.Router();
 const userQueries = require('../db/queries/users');
 const { pool } = require('../db/queries/pool');
 
-
 //Get all users test code
 router.get('/users', function(req, res) {
   
@@ -15,20 +14,20 @@ router.get('/users', function(req, res) {
 });
 
 /* Login Page. */
-// router.get('/login', function(req, res) {
+router.get('/login', function(req, res) {
 
-//   //check if logged in
-//   if(req.cookies["user_id"]) {
-//     return res.send('You\'re already logged in.');
-//   }
+  //check if logged in
+  if(req.cookies["user_id"]) {
+    return res.send('You\'re already logged in.');
+  }
 
-//   const templateVars = {
-//     user_id: req.cookies["user_id"],
-//   }
+  const templateVars = {
+    user_id: req.cookies["user_id"],
+  }
 
-//   res.render('/login', templateVars);
+  res.render('/login', templateVars);
 
-// });
+});
 
 
 //Login post 
@@ -38,8 +37,6 @@ router.put('/login', function(req, res) {
   const password = req.body.password;
   
   //check if user exists
-
-  req.session.user_id = null;
   
   userQueries.getUserByEmail(email)
   .then(data => {
@@ -52,26 +49,26 @@ router.put('/login', function(req, res) {
     }
 
     //set user
-    req.session.user_id = data[0].id;
-    return res.json([true, req.session.user_id]);
+    res.cookie("user_id", data[0].id);
+    return res.json([true, data[0].id]);
   });
 
  
 });
 
 /* Register */
-// router.get('/register', function(req, res) {
+router.get('/register', function(req, res) {
   
-//   //check if user is logged in
-//   const templateVars = {
-//     user_id: req.cookies["user_id"],
-//   }
-//   if(req.cookies["user_id"]) {
-//     return res.send('You\re already logged in.');
-//   }
+  //check if user is logged in
+  const templateVars = {
+    user_id: req.cookies["user_id"],
+  }
+  if(req.cookies["user_id"]) {
+    return res.send('You\re already logged in.');
+  }
 
-//   //res.render('/register');
-// });
+  //res.render('/register');
+});
 
 //Signup post method goes here
 router.put('/register', function(req, res) {
@@ -91,8 +88,7 @@ router.put('/register', function(req, res) {
 
   //Add new user
   userQueries.addUser(newUser).then(data => {
-    req.session.user_id = data[0].id;
-    return res.json([true, req.session.user_id]);
+    return res.json([true, data[0].id]);
   })
 
 });
@@ -100,7 +96,7 @@ router.put('/register', function(req, res) {
 //Logout
 
 router.post('/logout', (req, res) => {
-  req.session.user_id = null;
+  res.cookie("user_id", null);
   res.redirect('/');
 });
 

@@ -5,17 +5,14 @@ import "../styles/ShilpaPortfolio.css";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import ProjectForm from "../pages/ProjectForm";
 import ProjectTable from "../pages/ProjectTable";
-import useAppData from "../hooks/useAppData";
-import ProjectList from "./Projects/ProjectList";
+
 
 
 const ShilpaPortfolio = () => {
 
-    const {shilpaProjects} = useAppData();
-    const currentUser = localStorage.getItem("user_id");
-    const editAuth = (currentUser === "7");
-
+    
     return (
         <div className="shilpa-page">
             <div className="about1">
@@ -58,11 +55,9 @@ const ShilpaPortfolio = () => {
                 </ol>
             </div>
             <Work />
-            {editAuth && (
-              <ProjectTable />
-            )}
-            <ProjectList projectData={shilpaProjects} />
-            <Contact />
+          
+            <ProjectTable />
+          
         </div>
     )
 }

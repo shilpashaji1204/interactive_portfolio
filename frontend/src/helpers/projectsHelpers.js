@@ -1,27 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export function getUserProjects(user_id) {
+export function getProjects(userId) {
 
-  return axios.put('/projects', {user_id})
+  return axios.get(`/projects`, {userId})
   .then((data) => {
-    return data;
-  })
-  .catch((e) => {
-    console.log(e);
+    return (data);
   });
  
-};
-
-export function addProject(user_id, project_info) {
-  
-  return axios.post('/projects/new', {user_id, project_info})
-  .then((data) => {
-    return data;
-  })
-  .catch((e) => {
-    return ('Error message: ', e);
-  });
-
 };
 
