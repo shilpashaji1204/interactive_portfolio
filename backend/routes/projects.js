@@ -45,17 +45,15 @@ router.post('/projects/new', function(req, res) {
 
 });
 
-/* GET about page */
-// router.get('/about', function(req, res) {
-//   res.send('about page');
-// });
+router.put('/projects/edit', function(req, res) {
 
-// /* Individual Project  Page*/
-// router.get('/projects/:project_id', (req, res) => {
-//   projectQueries.getProjectsById(2)
-//   .then(data => {
-//     res.send(data);
-//   })
-// });
+  const project = req.body.editedProject;
+
+  projectQueries.editProject(project)
+  .then((data) => {
+    return res.json(data);
+  });
+
+});
 
 module.exports = router;

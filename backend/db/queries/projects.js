@@ -32,4 +32,13 @@ const addProject = (userID, project) => {
     });
 };
 
-module.exports = {addProject, getProjectsByUserId, getProjectsById, getAllProjects};
+const editProject = (project) => {
+  const values = [project.description, project.features, project.tech_stack, project.image_url, project.project_url, project.id];
+  return pool
+    .query(`UPDATE projects SET (description, features, tech_stack, image_url, project_url) WHERE id = $6 VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`, values)
+    .then((result) => {
+      return result.rows;
+    })
+}
+
+module.exports = {addProject, getProjectsByUserId, getProjectsById, getAllProjects, editProject};

@@ -33,3 +33,13 @@ export function getProject(project_id) {
   });
 };
 
+export function editProject(editedProject) {
+
+  return axios.put('/projects/edit', {editedProject}) 
+  .then((data) => {
+    return data;
+  })
+  .catch((e) => {
+    return ('Error message: ', e);
+  });
+};

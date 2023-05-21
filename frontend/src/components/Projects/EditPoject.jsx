@@ -1,15 +1,16 @@
 import React from "react";
 import useAppData from "../../hooks/useAppData";
+import EditProjectForm from "./EditProjectForm";
 
-export default function EditProject() {
+export default function EditProject(props) {
 
   const {project} = useAppData();
 
-  //const currentProject = localStorage.getItem("currentProject");
   console.log(project.title);
 
   
   const {
+    id,
     title,
     description,
     features,
@@ -31,6 +32,7 @@ export default function EditProject() {
             <th>{image_url}</th>
           </thead>
         </table>
+        <EditProjectForm id={id} title={title}/>
      </div>
   )
 };
