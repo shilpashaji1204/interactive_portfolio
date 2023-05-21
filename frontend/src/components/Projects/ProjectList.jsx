@@ -8,6 +8,7 @@ export default function ProjectList(props) {
     return (
       <ProjectListItem
         key={project.id}
+        id={project.id}
         title={project.title}
         description={project.description}
         features={project.features}

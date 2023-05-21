@@ -23,9 +23,15 @@ router.put('/projects', function(req, res) {
   });
 });
 
-// router.get('/projects/new', function(req, res) {
+router.get('/project', function(req,res) {
 
-// });
+  const project_id = req.body.project_id;
+
+  projectQueries.getProjectsById(project_id)
+  .then((data) => {
+    return res.json(data);
+  });
+});
 
 router.post('/projects/new', function(req, res) {
 

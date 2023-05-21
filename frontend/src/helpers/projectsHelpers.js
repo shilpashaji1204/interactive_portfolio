@@ -25,3 +25,11 @@ export function addProject(user_id, project_info) {
 
 };
 
+export function getProject(project_id) {
+
+  return axios.get('/project', {project_id}) 
+  .then((data) => {
+    return data;
+  });
+};
+
