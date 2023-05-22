@@ -56,4 +56,14 @@ router.put('/projects/edit', function(req, res) {
 
 });
 
+router.post('/project/delete', function (req, res) {
+
+  const id = req.body.project;
+
+  projectQueries.deleteProject(id)
+  .then((data) => {
+    return res.json(data);
+  });
+});
+
 module.exports = router;

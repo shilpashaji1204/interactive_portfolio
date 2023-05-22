@@ -43,3 +43,11 @@ export function editProject(editedProject) {
     return ('Error message: ', e);
   });
 };
+
+export function deleteProject(project) {
+
+  return axios.post('/project/delete', {project})
+  .then((data) => {
+    return data;
+  });
+};

@@ -45,6 +45,12 @@ const editProject = (project) => {
       console.log('add project error;', err.message);
       return err;
     });
-}
+};
 
-module.exports = {addProject, getProjectsByUserId, getProjectsById, getAllProjects, editProject};
+const deleteProject = (id) => {
+  return db.query(`DELETE FROM projects WHERE projects.id = $1`, [id]). then((data) => {
+    return data.rows
+  })
+};
+
+module.exports = {addProject, getProjectsByUserId, getProjectsById, getAllProjects, editProject, deleteProject};
