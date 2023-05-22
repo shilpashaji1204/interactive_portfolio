@@ -9,6 +9,9 @@ import ProjectList from "./Projects/ProjectList";
 import { useState } from "react";
 import useAppData from "../hooks/useAppData";
 import AddProject from "./Projects/AddProject";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css"
 
 const JoshPortfolio = () => {
 
@@ -18,6 +21,12 @@ const JoshPortfolio = () => {
     const editAuth = (currentUser === "5");
     console.log(editAuth);
     localStorage.setItem("auth", editAuth);
+
+    const [add, setAdd] = useState(false);
+
+    const handleAdd = (event) => {
+      setAdd(true);
+    };
     
     return (
 
@@ -62,12 +71,22 @@ const JoshPortfolio = () => {
                 </ol>
             </div>
             <Joshwork />
-            <h1> PROJECTS </h1>
+            {/* <h1> PROJECTS </h1> */}
             <ProjectList projectData={joshProjects} editAuth={editAuth} />
             {editAuth && (
-              <AddProject />
+              <div onClick={handleAdd}>
+                <VerticalTimelineElement
+                  iconStyle={{ background: "#ACC18A", color: "black" }}
+                  icon={<AddCircleOutlineIcon />}>
+                </VerticalTimelineElement>
+              </div>
             )}
-            <Contact />
+            {add && (
+              <AddProject /> 
+            )}
+            {!editAuth && (
+              <Contact />
+            )}
         </div>
     )
 }

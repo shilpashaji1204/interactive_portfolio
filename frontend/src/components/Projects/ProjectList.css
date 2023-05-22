@@ -10,3 +10,7 @@
 .image:hover {
   box-shadow: 0 0 11px gray;
 }
+
+.edit-button {
+  margin-top: 22px;
+}

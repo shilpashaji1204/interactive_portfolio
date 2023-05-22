@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css"
 import { Link } from "react-router-dom"
+import Assignment from '@mui/icons-material/Assignment';
 
 export default function ProjectListItem(props) {
 
@@ -18,24 +19,26 @@ export default function ProjectListItem(props) {
   }
   return (
     <div>
-        <VerticalTimeline lineColor="#ACC18A">
-          <VerticalTimelineElement>
-            <h1>{title}</h1>
-            <h2>{description}</h2>
-            <p>{features}</p>
-              <h3> Tech Stack: </h3>
-              <p>{tech_stack}</p>
-            <h3> Github Repo: {project_url} </h3>
-            <div>
-              <Link to={project_url} >
-                <img className="image" src={image_url} />
-              </Link>
-              {editAuth && (
-                <button onClick={handleEdit}>Edit</button>
-              )}
-            </div>
-          </VerticalTimelineElement>  
-      </VerticalTimeline>
+        
+    <VerticalTimelineElement
+      date ="2023"
+      iconStyle={{ background: "#ACC18A", color: "black" }}
+      icon={<Assignment />}>
+        <h1>{title}</h1>
+        <h2>{description}</h2>
+        <p>{features}</p>
+          <h3> Tech Stack: </h3>
+          <p>{tech_stack}</p>
+        <div>
+          <Link to={project_url} >
+            <img className="image" src={image_url} />
+          </Link>
+          {editAuth && (
+            <button className="edit-button" onClick={handleEdit}>Edit</button>
+          )}
+        </div>
+    </VerticalTimelineElement>  
+    
     </div>
   )
 };
