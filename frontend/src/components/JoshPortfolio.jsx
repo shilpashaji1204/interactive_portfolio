@@ -8,7 +8,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import ProjectList from "./Projects/ProjectList";
 import { useState } from "react";
 import useAppData from "../hooks/useAppData";
-import ProjectTable from "../pages/ProjectTable";
+import AddProject from "./Projects/AddProject";
 
 const JoshPortfolio = () => {
 
@@ -16,7 +16,9 @@ const JoshPortfolio = () => {
     const {joshProjects} = useAppData();
     const currentUser = localStorage.getItem("user_id");
     const editAuth = (currentUser === "5");
-
+    console.log(editAuth);
+    localStorage.setItem("auth", editAuth);
+    
     return (
 
         <div className="josh-page">
@@ -60,9 +62,9 @@ const JoshPortfolio = () => {
                 </ol>
             </div>
             <Joshwork />
-            <ProjectList projectData={joshProjects} />
+            <ProjectList projectData={joshProjects} editAuth={editAuth} />
             {editAuth && (
-              <ProjectTable />
+              <AddProject />
             )}
             <Contact />
         </div>

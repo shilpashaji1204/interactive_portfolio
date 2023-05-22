@@ -20,7 +20,8 @@ const handleInputChange = (event) => {
 };
 
     return (
-
+        <div className="Contact"> 
+        <body class="Contact">
         <form method="post" onSubmit={handleSubmit}>
             <h1>Contact</h1>
             <input type="text" name="name" id="" onChange={handleInputChange} value={data.name} placeholder="Enter Name"/>
@@ -30,6 +31,8 @@ const handleInputChange = (event) => {
             <button type="submit">send</button>
             
         </form>
+        </body>
+        </div>
     );
 };
 

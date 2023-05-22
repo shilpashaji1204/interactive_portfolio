@@ -1,4 +1,12 @@
-
+form {
+  display: block;
+  background-color: white;
+  box-shadow: 1px 1px 3px 2px #ddd;
+  margin: 194px auto;
+  max-width: 800px;
+  max-height: 700px;
+  padding: 66px 60px;
+}
   .input-field {
     width: 100%;
     padding: 10px 0;
@@ -25,7 +33,7 @@
     padding: 10px 20px;
     cursor: pointer;
     margin-top: 20px;
-    background-color: #FFC1CF;
+    background-color: black;
     border: none;
     outline: none;
     color: #fff;

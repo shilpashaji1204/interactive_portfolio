@@ -3,12 +3,14 @@ import ProjectListItem from './ProjectListItem';
 
 export default function ProjectList(props) {
 
-  console.log(props);
+  const editAuth = props.editAuth;
+  
   const projectArray = props.projectData.map(project => {
-
     return (
       <ProjectListItem
         key={project.id}
+        editAuth={editAuth}
+        id={project.id}
         title={project.title}
         description={project.description}
         features={project.features}

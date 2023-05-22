@@ -1,11 +1,20 @@
 import React from "react";
 import "./ProjectList.css";
+import { useNavigate } from "react-router-dom";
+import EditProject from "./EditPoject";
 
 export default function ProjectListItem(props) {
 
-  console.log(props);
-  const { title, description, features, tech_stack, project_url, image_url } = props;
+  const navigate = useNavigate();
+  const currentUser = localStorage.getItem("user_id");
+  //const editAuth = localStorage.getItem("auth");
+  const editAuth = props.editAuth; 
+  const { id, title, description, features, tech_stack, project_url, image_url } = props;
 
+  const handleEdit = (event) => {
+    const project_id = localStorage.setItem("project_id", id);
+    navigate("/editproject");
+  }
   return (
     <div>
       <h1>{title}</h1>
@@ -16,6 +25,9 @@ export default function ProjectListItem(props) {
       <h3> Github Repo: {project_url} </h3>
       <div>
         <img className="image" src={image_url}/>
+        {editAuth && (
+          <button onClick={handleEdit}>Edit</button>
+        )}
       </div>
     </div>
   )

@@ -1,18 +1,15 @@
 import React, { useState, Fragment } from "react";
-import '../styles/ProjectTable.css'
-import { nanoid } from 'nanoid';
-import data from "../mock-data.json";
-import EditableRow from "../components/EditableRow";
-import { addProject } from "../helpers/projectsHelpers";
+import '../../../src/styles/ProjectTable.css';
+import { addProject } from "../../helpers/projectsHelpers";
 
 
-const ProjectTable = () => {
+export default function AddProject() {
 
-    const [contacts, setContacts] = useState(data);
+    const currentUser = localStorage.getItem("user_id");
 
     
 
-    const currentUser = localStorage.getItem("user_id");
+  
 
     const [addFormData, setAddFormData] = useState({
 
@@ -138,8 +135,6 @@ const ProjectTable = () => {
 
         <div className="app-container">
         {/* <form onSubmit={handleEditFormSubmit}>
-
-
             <table>
                 <thead>
                     <tr>
@@ -243,6 +238,5 @@ const ProjectTable = () => {
             </form>
         </div>
     )
-}
+};
 
-export default ProjectTable

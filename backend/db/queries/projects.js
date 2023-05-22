@@ -1,5 +1,5 @@
 const db = require('../../configs/db.config');
-const { pool } = require('./pool');
+const { pool } = require('../queries/pool');
 
 const getAllProjects = () => {
 	return db.query("SELECT * FROM projects;").then(data => {
@@ -7,13 +7,13 @@ const getAllProjects = () => {
 	})
 }
 
-const getProjectsByUserId = id => {
+const getProjectsByUserId = (id) => {
   return db.query("SELECT * FROM projects WHERE projects.user_id = $1", [id]).then(data => {
     return data.rows;
   })
 }
 
-const getProjectsById = id => {
+const getProjectsById = (id) => {
   return db.query("SELECT * FROM projects WHERE id = $1", [id]).then(data => {
     return data.rows;
   })
@@ -32,4 +32,18 @@ const addProject = (userID, project) => {
     });
 };
 
-module.exports = {addProject, getProjectsByUserId, getProjectsById, getAllProjects};
+const editProject = (project) => {
+  //const values = [project.description, project.features, project.tech_stack, project.image_url, project.project_url, project.id];
+  const id = [project.id]
+  return pool
+    .query(`UPDATE projects SET project_url = 'new' WHERE id = $1 RETURNING *`, [id])
+    .then((result) => {
+      return result.rows;
+    })
+    .catch((err) => {
+      console.log('add project error;', err.message);
+      return err;
+    });
+}
+
+module.exports = {addProject, getProjectsByUserId, getProjectsById, getAllProjects, editProject};

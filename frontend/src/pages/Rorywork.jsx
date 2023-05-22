@@ -9,10 +9,10 @@ const Rorywork = () => {
   return (
 
     <div>
-      <VerticalTimeline lineColor="#ACC18A">
+      <VerticalTimeline lineColor="black">
         <VerticalTimelineElement className="vertical-timeline-element--education"
           date="2023"
-          iconStyle={{ background: "#ACC18A", color: "black" }}
+          iconStyle={{ background: "black", color: "white" }}
           icon={<SchoolIcon />}
         >
           <h3 className="vertical-timeline-element-title">
@@ -26,7 +26,7 @@ const Rorywork = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           date="2022 - 2023"
-          iconStyle={{ background: "#ACC18A", color: "black" }}
+          iconStyle={{ background: "black", color: "white" }}
           icon={<WorkIcon />}
         >
           <h3 className="vertical-timeline-element-title">
@@ -44,7 +44,7 @@ const Rorywork = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           date="2019 - 2021"
-          iconStyle={{ background: "#ACC18A", color: "black" }}
+          iconStyle={{ background: "black", color: "white" }}
           icon={<WorkIcon />}
         >
           <h3 className="vertical-timeline-element-title">
@@ -65,7 +65,7 @@ const Rorywork = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           date="2015 - 2019"
-          iconStyle={{ background: "#ACC18A", color: "black" }}
+          iconStyle={{ background: "black", color: "white" }}
           icon={<WorkIcon />}
         >
           <h3 className="vertical-timeline-element-title">

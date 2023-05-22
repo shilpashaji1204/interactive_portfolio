@@ -17,12 +17,15 @@ const Login = () => {
         console.log(data["data"][1]);
       } else {
         localStorage.setItem("loggedin", JSON.stringify(true));
+        localStorage.setItem("user_id", (data['data'][1]));
+        //console.log(data);
         navigate("/");
       }
     });
   };
 
   return (
+    <div className="login">
     <form id="login" className="input-group-login" onSubmit={handleLogin}>
       <input
         id="email"
@@ -42,12 +45,13 @@ const Login = () => {
       />
       <div className="checkbox-container">
         <input type="checkbox" className="check-box" />
-        <span>Remember Password</span>
+        <span className="checkbox-text">Remember Password</span>
       </div>
       <button type="submit" className="submit-btn">
         Login
       </button>
     </form>
+    </div>
   );
 };
 

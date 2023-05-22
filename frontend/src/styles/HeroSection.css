@@ -12,7 +12,7 @@
 
 .hero-button {
     margin-top: 20px;
-    background-color: #FFC1CF;
+    background-color: #0a0909;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -23,6 +23,6 @@
 }
 
 .hero-button:hover {
-    background-color: #8A95A5;
+    background-color: #b39f9f;
     color: black;
   }

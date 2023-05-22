@@ -1,20 +1,19 @@
-#login-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.login form{
+  display: block;
+  background-color: white;
+  box-shadow: 1px 1px 3px 2px #ddd;
+  margin: 194px auto;
+  max-width: 455px;
+  max-height: 700px;
+  padding: 66px 60px;
+}
   
-  .form-box {
-    width: 380px;
-    height: auto;
-    position: relative;
-    margin: 2% auto;
-    background: #dcedff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px 9px #ff61241f;
-  }
   
   .button-box {
     display: flex;
@@ -23,26 +22,6 @@
     position: relative;
     box-shadow: 0 0 20px 9px #ff61241f;
     border-radius: 30px;
-  }
-  
-  .toggle-btn {
-    padding: 10px 20px;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    outline: none;
-    position: relative;
-    width: 150px;
-  }
-  
-  .toggle-btn.active {
-    background-color: #FFC1CF;
-    color: #fff;
-  }
-  
-  .toggle-btn.inactive {
-    background-color: #dcedff;
-    color: #333;
   }
   
   .input-field {
@@ -78,7 +57,7 @@
     padding: 10px 20px;
     cursor: pointer;
     margin-top: 20px;
-    background-color: #FFC1CF;
+    background-color: black;
     border: none;
     outline: none;
     color: #fff;
@@ -91,13 +70,4 @@
     background-color:#5D737E;
   }
   
-  @media (max-width: 480px) {
-    .form-box {
-      width: 90%;
-    }
-  
-    #btn {
-      width: 60px;
-    }
-  }
   

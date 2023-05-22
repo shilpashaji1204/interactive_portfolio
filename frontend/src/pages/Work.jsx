@@ -9,10 +9,10 @@ const Work = () => {
   return (
 
     <div>
-      <VerticalTimeline lineColor="#ACC18A">
+      <VerticalTimeline lineColor="black">
         <VerticalTimelineElement className="vertical-timeline-element--education"
           date="2023"
-          iconStyle={{ background: "#ACC18A", color: "black" }}
+          iconStyle={{ background: "black", color: "white" }}
           icon={<SchoolIcon />}
         >
           <h3 className="vertical-timeline-element-title">
@@ -26,7 +26,7 @@ const Work = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           date="2022"
-          iconStyle={{ background: "#ACC18A", color: "black" }}
+          iconStyle={{ background: "black", color: "white" }}
           icon={<WorkIcon />}
         >
           <h3 className="vertical-timeline-element-title">
@@ -47,7 +47,7 @@ const Work = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           date="2021 - 2022"
-          iconStyle={{ background: "#ACC18A", color: "black" }}
+          iconStyle={{ background: "black", color: "white" }}
           icon={<WorkIcon />}
         >
           <h3 className="vertical-timeline-element-title">
@@ -70,7 +70,7 @@ const Work = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           date="2018 - 2020"
-          iconStyle={{ background: "#ACC18A", color: "black" }}
+          iconStyle={{ background: "black", color: "white" }}
           icon={<WorkIcon />}
         >
           <h3 className="vertical-timeline-element-title">
