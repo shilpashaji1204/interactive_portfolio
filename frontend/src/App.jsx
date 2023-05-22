@@ -19,6 +19,10 @@ import RoryPortfolio from './components/RoryPortfolio';
 import AddProject from './components/Projects/AddProject';
 import EditProject from './components/Projects/EditPoject';
 axios.defaults.baseURL = `http://localhost:8080/api`
+import Computer from './pages/Computer';
+import ProjectAnimation from './pages/ProjectAnimation';
+import Index from './pages/background/index';
+// import background from './pages/background/background';
 
 
 function App() {
@@ -43,6 +47,11 @@ function App() {
             <Route path='/roryportfolio' element= {<RoryPortfolio />} />
             <Route path="/addproject" element = {<AddProject />} />
             <Route path="/editproject" element = {<EditProject />} />
+            <Route path="/computer" element = {<Computer />} />
+            <Route path="/projectanimation" element = {<ProjectAnimation />} />
+            <Route path="/index" element = {<Index />} />
+            {/* <Route path="/background" element = {<background />} /> */}
+
           </Routes>
           
         </Router>
