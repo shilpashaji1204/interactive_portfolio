@@ -1,13 +1,15 @@
 import React from "react";
 import "./ProjectList.css";
 import { useNavigate } from "react-router-dom";
-import EditProject from "./EditPoject";
+import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css"
+import { Link } from "react-router-dom"
+import Assignment from '@mui/icons-material/Assignment';
 
 export default function ProjectListItem(props) {
 
   const navigate = useNavigate();
   const currentUser = localStorage.getItem("user_id");
-  //const editAuth = localStorage.getItem("auth");
   const editAuth = props.editAuth; 
   const { id, title, description, features, tech_stack, project_url, image_url } = props;
 
@@ -17,18 +19,26 @@ export default function ProjectListItem(props) {
   }
   return (
     <div>
-      <h1>{title}</h1>
-      <h2>{description}</h2>
-      <p>{features}</p>
-        <h3> Tech Stack: </h3>
-        <p>{tech_stack}</p>
-      <h3> Github Repo: {project_url} </h3>
-      <div>
-        <img className="image" src={image_url}/>
-        {editAuth && (
-          <button onClick={handleEdit}>Edit</button>
-        )}
-      </div>
+        
+    <VerticalTimelineElement
+      date ="2023"
+      iconStyle={{ background: "#ACC18A", color: "black" }}
+      icon={<Assignment />}>
+        <h1>{title}</h1>
+        <h2>{description}</h2>
+        <p>{features}</p>
+          <h3> Tech Stack: </h3>
+          <p>{tech_stack}</p>
+        <div>
+          <Link to={project_url} >
+            <img className="image" src={image_url} />
+          </Link>
+          {editAuth && (
+            <button className="edit-button" onClick={handleEdit}>Edit</button>
+          )}
+        </div>
+    </VerticalTimelineElement>  
+    
     </div>
   )
 };

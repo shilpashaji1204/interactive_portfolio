@@ -1,11 +1,28 @@
 import React, { useState, Fragment } from "react";
 import '../../../src/styles/ProjectTable.css';
-import { editProject } from "../../helpers/projectsHelpers";
+import { editProject, deleteProject } from "../../helpers/projectsHelpers";
+import { useNavigate } from "react-router-dom";
 
 export default function EditProjectForm(props) {
 
   const currentUser = localStorage.getItem("user_id");
   const {id, title} = props;
+  const navigate = useNavigate();
+
+  const handleDelete = (event) => {
+    event.preventDefault();
+
+    deleteProject(Number(id)).then((data) => {
+      console.log(data);
+    });
+
+    if (currentUser === "5") {
+      navigate('/joshportfolio');
+    } else if (currentUser === "7") {
+      navigate('/shilpaportfolio');
+    };
+
+  };
  
   const [editFormData, setEditFormData] = useState({
        
@@ -47,46 +64,54 @@ export default function EditProjectForm(props) {
     editProject(editedProject).then((data) => {
       console.log(data);
     });
+
+    window.location.reload(false);
+
   };
 
   return (
-    <form onSubmit={handleEditFormSubmit}>
-      <input
-        type="text"
-        name="description"
-        required="required"
-        placeholder="Description"
-        onChange={handleEditFormChange}
-      />
-      <input
+    <div>
+      <form onSubmit={handleEditFormSubmit}>
+        <input
           type="text"
-          name="feature"
+          name="description"
           required="required"
-          placeholder="Feature"
+          placeholder="Description"
           onChange={handleEditFormChange}
-      />
-      <input
-          type="text"
-          name="techstack"
-          required="required"
-          placeholder="Tech_stack"
-          onChange={handleEditFormChange}
-      />
-      <input
-          type="text"
-          name="imageurl"
-          required="required"
-          placeholder="Image_url"
-          onChange={handleEditFormChange}
-      />
-      <input
-          type="text"
-          name="projecturl"
-          required="required"
-          placeholder="Project_url"
-          onChange={handleEditFormChange}
-      />
-      <button type="submit">Submit Changes</button>
-    </form>
+        />
+        <input
+            type="text"
+            name="feature"
+            required="required"
+            placeholder="Feature"
+            onChange={handleEditFormChange}
+        />
+        <input
+            type="text"
+            name="techstack"
+            required="required"
+            placeholder="Tech_stack"
+            onChange={handleEditFormChange}
+        />
+        <input
+            type="text"
+            name="imageurl"
+            required="required"
+            placeholder="Image_url"
+            onChange={handleEditFormChange}
+        />
+        <input
+            type="text"
+            name="projecturl"
+            required="required"
+            placeholder="Project_url"
+            onChange={handleEditFormChange}
+        />
+        <button type="submit">Submit Changes</button>
+      </form>
+      <button onClick={handleDelete}>
+        Delete Project?
+      </button>
+    </div>
   )
 };

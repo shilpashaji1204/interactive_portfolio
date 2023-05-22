@@ -33,10 +33,11 @@ const addProject = (userID, project) => {
 };
 
 const editProject = (project) => {
-  //const values = [project.description, project.features, project.tech_stack, project.image_url, project.project_url, project.id];
-  const id = [project.id]
+
+  const values = [project.description, project.features, project.tech_stack, project.image_url, project.project_url, project.id];
+  
   return pool
-    .query(`UPDATE projects SET project_url = 'new' WHERE id = $1 RETURNING *`, [id])
+    .query(`UPDATE projects SET description = $1, features = $2, tech_stack = $3, image_url = $4, project_url =$5 WHERE id = $6 RETURNING *;`, values)
     .then((result) => {
       return result.rows;
     })
@@ -44,6 +45,12 @@ const editProject = (project) => {
       console.log('add project error;', err.message);
       return err;
     });
-}
+};
 
-module.exports = {addProject, getProjectsByUserId, getProjectsById, getAllProjects, editProject};
+const deleteProject = (id) => {
+  return db.query(`DELETE FROM projects WHERE projects.id = $1`, [id]). then((data) => {
+    return data.rows
+  })
+};
+
+module.exports = {addProject, getProjectsByUserId, getProjectsById, getAllProjects, editProject, deleteProject};
