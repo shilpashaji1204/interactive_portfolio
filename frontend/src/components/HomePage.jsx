@@ -4,6 +4,7 @@ import Work from "../pages/Work";
 import Projects from "../pages/Projects";
 import Contact from "../pages/Contact";
 import HeroSection from "../pages/HeroSection";
+import '../styles/HomePage.css';
 
 
 const HomePage = () => {

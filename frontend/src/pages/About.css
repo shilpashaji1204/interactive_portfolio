@@ -1,22 +1,26 @@
 .about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: px; 
+    margin-bottom: 10px; 
+  
 }
 
 .about p {
-  font-size: 30px;
+  font-size: 25px;
   margin-bottom: 80px;
   margin-top: 10px;
-  text-align: left;
+  text-align: center;
 }
 
 .intro {
   font-size: 50px;
-}
-
-.overview {
-  font-size: 40px;
+  text-align: center;
+  margin: 0px auto;
+  color: black;
 }
 
 .project-container > h2 {
@@ -75,7 +79,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 10px;
 }
 
@@ -89,15 +93,27 @@
   justify-content: center;
   padding: 10px;
 }
+.flip-card-front .image {
+  margin-bottom: 20px;
+  text-align: center;
+}
 
 .flip-card .image img {
   width: 100%;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
+  margin-left: 104px;
 }
 
-.flip-card h2 {
+.flip-card-front h2 {
+  margin-top: 248px;
+  text-align: center;
+  margin-right: 355px;
+}
+
+.flip-card-back h2 {
   margin-bottom: 10px;
+  margin-right: 20px;
 }
 
 .flip-card p {
