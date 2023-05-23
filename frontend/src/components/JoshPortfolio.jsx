@@ -25,7 +25,11 @@ const JoshPortfolio = () => {
     const [add, setAdd] = useState(false);
 
     const handleAdd = (event) => {
-      setAdd(true);
+      if(add === true) {
+        setAdd(false);
+      } else {
+        setAdd(true);
+      }
     };
     
     return (
@@ -77,7 +81,7 @@ const JoshPortfolio = () => {
               <div onClick={handleAdd}>
                 <VerticalTimelineElement
                   className="add-btn"
-                  iconStyle={{ background: "#ACC18A", color: "black" }}
+                  iconStyle={{ background: "black", color: "white" }}
                   icon={<AddCircleOutlineIcon />}>
                 </VerticalTimelineElement>
               </div>

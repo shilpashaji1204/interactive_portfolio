@@ -120,9 +120,12 @@
   button {
 
     background-color: black;
+    border: none;
     color: white;
-    font-size: larger;
+    font-size: 25px;
     border-radius: 3px;
+    height: 100hv;
+    margin: 20px;
   
   }
 

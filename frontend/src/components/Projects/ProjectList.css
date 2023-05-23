@@ -5,6 +5,7 @@
   align-items: center;
   margin-left: 10%;
   width: 80%;
+  height: 200px;
   border: 1px solid black;
   border-radius: 8px;
 }
@@ -17,13 +18,19 @@
   margin-top: 22px;
   color: white;
   background-color: black;
-  width: 70%;
+  width:50%;
   border-radius: 30px;
   border: none;
   padding: 5px 0px 5px;
+  font-size: medium;
 }
 
 .edit-button:hover {
     background-color: #5D737E;
     cursor: pointer;
+}
+
+.project-icon {
+  background: "#ACC18A";
+  color: "black";
 }

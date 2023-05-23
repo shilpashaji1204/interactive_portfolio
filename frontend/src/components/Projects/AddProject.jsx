@@ -106,7 +106,7 @@ export default function AddProject() {
                   placeholder="Project_url"
                   onChange={handleAddFormChange}
               />
-              <button className="add-form-btn" type="submit">Add</button>
+              <button className="add-form-btn" type="submit">Add Project</button>
           </form>
       </div>
   )

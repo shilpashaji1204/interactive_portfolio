@@ -21,8 +21,10 @@ export default function ProjectListItem(props) {
     <div>
         
     <VerticalTimelineElement
+      layout={'1-column-right'}
       date ="2023"
-      iconStyle={{ background: "#ACC18A", color: "black" }}
+      className="project-icon"
+      iconStyle={{ background: 'black', color: "white" }}
       icon={<Assignment />}>
         <h1>{title}</h1>
         <h2>{description}</h2>
@@ -39,6 +41,7 @@ export default function ProjectListItem(props) {
         </div>
     </VerticalTimelineElement>  
     
+      <div></div>
     </div>
   )
 };

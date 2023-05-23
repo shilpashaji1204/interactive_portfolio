@@ -26,6 +26,7 @@ form input, textarea {
     border: 1px solid #ddd;
     border-radius: 4px;
     overflow-wrap: break-word;
+    
 
   }
   
@@ -42,6 +43,7 @@ form input, textarea {
     cursor: pointer;
     border-radius: 30px;
     margin-bottom: 20px;
+    font-size: medium;
 }
 
 .add-form-btn:hover {

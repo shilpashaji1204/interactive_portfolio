@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from "react";
-import '../../../src/styles/ProjectTable.css';
 import { editProject, deleteProject } from "../../helpers/projectsHelpers";
 import { useNavigate } from "react-router-dom";
+import './EditProject.css';
 
 export default function EditProjectForm(props) {
 
@@ -71,7 +71,11 @@ export default function EditProjectForm(props) {
 
   return (
     <div>
-      <form onSubmit={handleEditFormSubmit}>
+      <button className="delete-btn" onClick={handleDelete}>
+        Delete Project?
+      </button>
+      <form className="edit-form" onSubmit={handleEditFormSubmit}>
+        <h1 className="form-title">Edit Project</h1>
         <input
           type="text"
           name="description"
@@ -107,11 +111,8 @@ export default function EditProjectForm(props) {
             placeholder="Project_url"
             onChange={handleEditFormChange}
         />
-        <button type="submit">Submit Changes</button>
+        <button className="edit-submit-btn" type="submit">Submit Changes</button>
       </form>
-      <button onClick={handleDelete}>
-        Delete Project?
-      </button>
     </div>
   )
 };

@@ -57,6 +57,7 @@
     display: flex;
     padding-left: 50%;
     align-self: center;
+    margin-left: 53px;
   }
 
   .add-btn:hover {
