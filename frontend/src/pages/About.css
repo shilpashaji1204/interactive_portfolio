@@ -1,38 +1,33 @@
+
 .about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin-top: px; 
-    margin-bottom: 10px; 
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about p {
-  font-size: 25px;
+  font-size: 30px;
   margin-bottom: 80px;
   margin-top: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 .intro {
   font-size: 50px;
-  text-align: center;
-  margin: 0px auto;
-  color: black;
+}
+
+.overview {
+  font-size: 40px;
 }
 
 .project-container > h2 {
-  font-size: 30px; /* Increase the font size to make it bigger */
+  font-size: 30px; 
   margin: 0;
 }
 
 .project-text {
-  font-size: 30px; /* Increase the font size to make it bigger */
+  font-size: 30px; 
 }
-
-
 
 .icon-container {
   display: flex;
@@ -71,6 +66,7 @@
   border-radius: 10px;
   backface-visibility: hidden;
   transition: transform 0.5s linear;
+  
 }
 
 .flip-card-front {
@@ -79,7 +75,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 10px;
 }
 
@@ -92,28 +88,18 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
-}
-.flip-card-front .image {
-  margin-bottom: 20px;
-  text-align: center;
+  
 }
 
 .flip-card .image img {
   width: 100%;
+  height: auto;
   border-radius: 10px;
-  margin-bottom: 40px;
-  margin-left: 104px;
-}
-
-.flip-card-front h2 {
-  margin-top: 248px;
-  text-align: center;
-  margin-right: 355px;
-}
-
-.flip-card-back h2 {
   margin-bottom: 10px;
-  margin-right: 20px;
+}
+
+.flip-card h2 {
+  margin-bottom: 10px;
 }
 
 .flip-card p {
@@ -129,48 +115,3 @@
 .flip-card:hover .flip-card-back {
   transform: rotateY(0deg);
 }
-
-
-
-
-
-/* realy old working code bbelow */
-/* 
-.about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.about p {
-  font-size: 40px;
-  margin-bottom: 80px;
-  margin-top: 10px;
-  text-align: center;
-}
-
-.intro {
-  font-size: 60px;
-}
-
-.overview {
-  font-size: 80px;
-}
-
-.icon-container {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  max-width: 800px;
-  margin-top: 60px;
-  margin-bottom: 20px;
-}
-
-.icon {
-  width: 220px;
-  height: 220px;
-  margin: 0 50px;
-}
-
- */
-

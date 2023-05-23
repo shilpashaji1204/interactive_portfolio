@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
-// import * as THREE from 'three';
+import * as THREE from 'three';
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import './background.css';
 
 
-const spaceTexture = new THREE.TextureLoader().load('/Users/roryschofield/lighthouse/interactive_portfolio/frontend/src/pages/background/space.jpg');
-const jeffTexture = new THREE.TextureLoader().load('/Users/roryschofield/lighthouse/interactive_portfolio/frontend/src/pages/background/man.png');
-const moonTexture = new THREE.TextureLoader().load('/Users/roryschofield/lighthouse/interactive_portfolio/frontend/src/pages/background/moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('/Users/roryschofield/lighthouse/interactive_portfolio/frontend/src/pages/background/normal.jpg');
+// import spaceTexture from './space.jpg';
+import jeffTexture from './man.png';
+import moonTexture from './moon.jpg';
+import normalTexture from './normal.jpg';
+import spaceTexture from '../background/space.jpg';
+
 
 function ThreeD() {
   useEffect(() => {
