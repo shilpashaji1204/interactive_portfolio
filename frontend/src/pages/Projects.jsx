@@ -4,10 +4,17 @@ import pairPic from "../assets/images/pair_pic.jpg";
 import ProjectAnimation from "./ProjectAnimation";
 import Lottie from "lottie-react";
 import animationData from "../assets/125170-projects-text.json"
+import { Link } from "react-router-dom"
+
 // import "./About.css";
 
 
 const Projects = () => {
+
+  const schedulerImage = 'https://github.com/7-O-2-H/scheduler/blob/master/docs/Full%20View%20of%20Application.png?raw=true';
+  const jungleImage = 'https://github.com/7-O-2-H/jungle/blob/master/docs/Main%20Page%20-%20Products%20Index.png?raw=true';
+  const tinyImage = 'https://raw.githubusercontent.com/RorySchof/tinyapp/main/docs/Screenshot%202023-03-27%20at%2010.05.20%20PM.png';
+
   return (
     <div className="project-container">
 
@@ -24,7 +31,7 @@ const Projects = () => {
           <div className="flip-card">
             <div className="flip-card-front">
               <div className="image">
-                <img src={pairPic} alt="Pair of people working" className="project-image" />
+                <img src={schedulerImage} alt="Pair of people working" className="project-image" />
                 <h2>SCHEDULER</h2>
               </div>
             </div>
@@ -38,8 +45,9 @@ const Projects = () => {
 
               <div className="buttons">
     <button className="button">View Project</button>
-    <button className="button">Explore Code</button>
-  </div>
+    <Link to={'https://github.com/7-O-2-H/scheduler'} >
+      <button className="button">Explore Code</button>
+    </Link>  </div>
             </div>
           </div>
         </div>
@@ -48,7 +56,7 @@ const Projects = () => {
           <div className="flip-card">
             <div className="flip-card-front">
               <div className="image">
-                <img src={pairPic} alt="Pair of people working" className="project-image" />
+                <img src={jungleImage} alt="Pair of people working" className="project-image" />
                 <h2>JUNGLE</h2>
               </div>
             </div>
@@ -61,7 +69,9 @@ const Projects = () => {
 
               <div className="buttons">
     <button className="button">View Project</button>
-    <button className="button">Explore Code</button>
+    <Link to={"https://github.com/7-O-2-H/jungle"} >
+      <button className="button">Explore Code</button>
+    </Link>
   </div>
             </div>
           </div>
@@ -71,7 +81,7 @@ const Projects = () => {
           <div className="flip-card">
             <div className="flip-card-front">
               <div className="image">
-                <img src={pairPic} alt="Pair of people working" className="project-image" />
+                <img src={tinyImage} alt="Pair of people working" className="project-image" />
                 <h2>TINY APP</h2>
               </div>
             </div>
@@ -83,7 +93,9 @@ const Projects = () => {
               </p>
               <div className="buttons">
     <button className="button">View Project</button>
-    <button className="button">Explore Code</button>
+    <Link to={"https://github.com/RorySchof/tinyapp"} >
+      <button className="button">Explore Code</button>
+    </Link>
   </div>
             </div>
           </div>
