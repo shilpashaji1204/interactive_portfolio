@@ -122,5 +122,10 @@
     background-color: black;
     color: white;
     font-size: larger;
+    border-radius: 3px;
   
+  }
+
+  button:hover {
+    cursor: pointer;
   }

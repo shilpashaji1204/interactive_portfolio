@@ -62,7 +62,7 @@ export default function AddProject() {
       <div className="app-container">
       
           <h2>Add Project</h2>
-          <form onSubmit={handleAddFormSubmit}>
+          <form className="add-form" onSubmit={handleAddFormSubmit}>
               <input
                   type="text"
                   name="title"
@@ -105,7 +105,7 @@ export default function AddProject() {
                   placeholder="Project_url"
                   onChange={handleAddFormChange}
               />
-              <button type="submit">Add</button>
+              <button className="add--form-btn" type="submit">Add</button>
           </form>
       </div>
   )

@@ -1,10 +1,12 @@
 .image {
+  margin-top: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 10%;
   width: 80%;
-  border-radius: 15px;
+  border: 1px solid black;
+  border-radius: 8px;
 }
 
 .image:hover {
@@ -13,4 +15,13 @@
 
 .edit-button {
   margin-top: 22px;
+  color: white;
+  background-color: black;
+  width: 70%;
+  border-radius: 7px;
+}
+
+.edit-button:hover {
+    background-color: #5D737E;
+    cursor: pointer;
 }

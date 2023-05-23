@@ -8,6 +8,10 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import AddProject from "./Projects/AddProject";
 import useAppData from "../hooks/useAppData";
 import ProjectList from "./Projects/ProjectList";
+import { useState } from "react";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css"
 
 
 const ShilpaPortfolio = () => {
@@ -16,6 +20,11 @@ const ShilpaPortfolio = () => {
     const currentUser = localStorage.getItem("user_id");
     const editAuth = (currentUser === "7");
     localStorage.setItem("auth", editAuth);
+    const [add, setAdd] = useState(false);
+
+    const handleAdd = (event) => {
+      setAdd(true);
+    };
 
     return (
         <div className="shilpa-page">
@@ -59,11 +68,22 @@ const ShilpaPortfolio = () => {
                 </ol>
             </div>
             <Work />
-            <ProjectList projectData={shilpaProjects} />
+            <ProjectList projectData={shilpaProjects} editAuth={editAuth}/>
             {editAuth && (
+              <div onClick={handleAdd}>
+              <VerticalTimelineElement
+                className="add-btn"
+                iconStyle={{ background: "#ACC18A", color: "black" }}
+                icon={<AddCircleOutlineIcon />}>
+              </VerticalTimelineElement>
+            </div>
+            )}
+            {add && (
               <AddProject />
             )}
-            <Contact />
+            {!editAuth && (
+              <Contact />
+            )}
         </div>
     )
 }

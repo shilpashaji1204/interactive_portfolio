@@ -52,3 +52,14 @@
   .list .item span {
     font-size: 16px;
   }
+
+  .add-btn {
+    display: flex;
+    padding-left: 50%;
+    align-self: center;
+  }
+
+  .add-btn:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 11px gray);
+  }
