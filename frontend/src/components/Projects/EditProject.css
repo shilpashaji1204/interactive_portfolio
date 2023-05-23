@@ -4,9 +4,32 @@
   align-items: center;
 }
 
-table, th {
-  border: solid black;
+.project-title {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
+
+.project-details {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 700px;
+}
+
+.project-detail {
+  margin-bottom: 10px;
+}
+
+.detail-label {
+  font-weight: bold;
+}
+
+.detail-value {
+  margin-top: 5px;
+}
+
+
 
 .edit-form {
   display: block;
@@ -17,6 +40,7 @@ table, th {
   width: 800px;
   max-height: 700px;
   padding: 20px 60px 40px;
+  margin-top: -150px;
 }
 
 .edit-submit-btn {
@@ -34,4 +58,5 @@ table, th {
   border-radius: 30px;
   width: 30%;
   margin: 280px;
+  margin-top: 20px;
 }
