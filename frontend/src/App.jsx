@@ -16,7 +16,13 @@ axios.defaults.baseURL = `http://localhost:8080/api`
 import Computer from './pages/Computer';
 import ProjectAnimation from './pages/ProjectAnimation';
 import Index from './pages/background/index';
-// import background from './pages/background/background';
+import Background from './pages/background/background';
+import Globe from './pages/Globe';
+import Cube from './pages/Cube';
+// import Scrolling from './pages/scrolling/Scrolling';
+
+
+
 
 
 function App() {
@@ -39,7 +45,14 @@ function App() {
             <Route path="/computer" element = {<Computer />} />
             <Route path="/projectanimation" element = {<ProjectAnimation />} />
             <Route path="/index" element = {<Index />} />
-            {/* <Route path="/background" element = {<background />} /> */}
+            <Route path="/background" element = {<Background />} />
+            <Route path="/globe" element={<Globe />} />
+            <Route path="/cube" element={<Cube />} />
+            {/* <Route path="/scrolling" element={<Scrolling />} /> */}
+
+
+
+
 
           </Routes>
           
