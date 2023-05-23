@@ -5,8 +5,12 @@ form {
   margin: 194px auto;
   max-width: 800px;
   max-height: 700px;
-  padding: 66px 60px;
+  padding: 30px 60px 50px;
 }
+  .form-title {
+    text-align: center;
+  }
+
   .input-field {
     width: 100%;
     padding: 10px 0;
@@ -39,6 +43,7 @@ form {
     font-size: 16px;
     border-radius: 30px;
     transition: background-color 0.3s;
+    padding: 5px 0px 5px 0px;
   }
   
   .submit-btn:hover {

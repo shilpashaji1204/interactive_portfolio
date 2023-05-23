@@ -61,8 +61,8 @@ export default function AddProject() {
   return (
       <div className="app-container">
       
-          <h2>Add Project</h2>
           <form className="add-form" onSubmit={handleAddFormSubmit}>
+          <h2>Add Project</h2>
               <input
                   type="text"
                   name="title"
@@ -81,7 +81,8 @@ export default function AddProject() {
                   type="text"
                   name="feature"
                   required="required"
-                  placeholder="Feature"
+                  placeholder="Features"
+                  rows="5"
                   onChange={handleAddFormChange}
               />
               <input
@@ -105,7 +106,7 @@ export default function AddProject() {
                   placeholder="Project_url"
                   onChange={handleAddFormChange}
               />
-              <button className="add--form-btn" type="submit">Add</button>
+              <button className="add-form-btn" type="submit">Add</button>
           </form>
       </div>
   )

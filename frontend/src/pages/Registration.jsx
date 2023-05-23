@@ -31,6 +31,7 @@ const Registration = () => {
 
   return (
     <form id="register" className="input-group-register" onSubmit={handleSubmit}>
+      <h1 className="form-title">Sign Up</h1>
       <input
         type="name"
         className="input-field"

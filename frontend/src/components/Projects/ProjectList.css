@@ -18,7 +18,9 @@
   color: white;
   background-color: black;
   width: 70%;
-  border-radius: 7px;
+  border-radius: 30px;
+  border: none;
+  padding: 5px 0px 5px;
 }
 
 .edit-button:hover {
