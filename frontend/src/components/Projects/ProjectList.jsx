@@ -1,28 +1,28 @@
 import React from "react";
 import ProjectListItem from './ProjectListItem';
-import { VerticalTimeline } from "react-vertical-timeline-component";
+import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 
 export default function ProjectList(props) {
 
   const editAuth = props.editAuth;
   
-  const projectArray = props.projectData.map(project => {
-    return (
-      <VerticalTimeline lineColor="#ACC18A">
-        <ProjectListItem
-          key={project.id}
-          editAuth={editAuth}
-          id={project.id}
-          title={project.title}
-          description={project.description}
-          features={project.features}
-          tech_stack={project.tech_stack}
-          project_url={project.project_url}
-          image_url={project.image_url}
-        />
-      </VerticalTimeline>
-    )
-  })
+  const projectArray = props.projectData.map(project => (
+    <ProjectListItem
+      key={project.id}
+      editAuth={editAuth}
+      id={project.id}
+      title={project.title}
+      description={project.description}
+      features={project.features}
+      tech_stack={project.tech_stack}
+      project_url={project.project_url}
+      image_url={project.image_url}
+    />
+  ));
 
-  return <ul>{projectArray}</ul>
+  return (
+    <VerticalTimeline lineColor="black">
+      {projectArray}
+    </VerticalTimeline>
+  );
 }

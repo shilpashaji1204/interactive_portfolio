@@ -76,7 +76,7 @@ const JoshPortfolio = () => {
             {editAuth && (
               <div onClick={handleAdd}>
                 <VerticalTimelineElement
-                  iconStyle={{ background: "#ACC18A", color: "black" }}
+                  iconStyle={{ background: "black", color: "white" }}
                   icon={<AddCircleOutlineIcon />}>
                 </VerticalTimelineElement>
               </div>
