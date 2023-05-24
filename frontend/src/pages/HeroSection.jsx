@@ -20,7 +20,6 @@ const HeroSection = () => {
                 <button className="hero-button">Get Started</button>
                 </Link>
             </div>
-
         </div>
         <div className="section-hero-animation">
           <Lottie animationData={animationData} />
