@@ -4,8 +4,7 @@ import EditProjectForm from "./EditProjectForm";
 import "./EditProject.css";
 
 export default function EditProject(props) {
-
-  const {project} = useAppData();
+  const { project } = useAppData();
   
   const {
     id,
@@ -17,32 +16,32 @@ export default function EditProject(props) {
     image_url,
   } = project;
 
-
   return (
-     <div className="edit-page">
-       <h1 className="project-title">{title}</h1>
-          <p>Description: {description}</p>
-        <table style={{width: 300}}>
-          <thead>
-            <tr style={{width: 1000}}>
-              <th style={{height: 100}}>Features</th>
-              <th>{features}</th>
-            </tr>
-            <tr>
-              <th style={{font:"bold"}}>Tech Stack</th>
-              <th>{tech_stack}</th>
-            </tr>
-            <tr>
-              <th>Project Url</th>
-              <th>{project_url}</th>
-            </tr>
-            <tr>
-              <th>Image Url</th>
-              <th>{image_url}</th>
-            </tr>
-          </thead>
-        </table>
-        <EditProjectForm id={id} title={title}/>
-     </div>
-  )
-};
+    <div className="edit-page">
+      <h1 className="project-title">{title}</h1>
+      <div className="project-details">
+      <div className="project-detail">
+          <div className="detail-label">Description:</div>
+          <div className="detail-value">{description}</div>
+        </div>
+        <div className="project-detail">
+          <div className="detail-label">Features:</div>
+          <div className="detail-value">{features}</div>
+        </div>
+        <div className="project-detail">
+          <div className="detail-label">Tech Stack:</div>
+          <div className="detail-value">{tech_stack}</div>
+        </div>
+        <div className="project-detail">
+          <div className="detail-label">Project Url:</div>
+          <div className="detail-value">{project_url}</div>
+        </div>
+        <div className="project-detail">
+          <div className="detail-label">Image Url:</div>
+          <div className="detail-value">{image_url}</div>
+        </div>
+      </div>
+      <EditProjectForm id={id} title={title} />
+    </div>
+  );
+}
