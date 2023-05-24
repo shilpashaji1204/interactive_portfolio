@@ -8,7 +8,7 @@ router.get('/projects', function(req, res) {
 
   projectQueries.getAllProjects()
   .then(data => {
-    res.json(data);
+    return res.json(data);
   });
   
 });
