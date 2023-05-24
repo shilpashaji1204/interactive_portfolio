@@ -1,6 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+export function getProjects() {
+
+  return axios.get('/projects')
+  .then((data) => {
+    return data;
+  });
+  
+};
+
 export function getUserProjects(user_id) {
 
   return axios.put('/projects', {user_id})

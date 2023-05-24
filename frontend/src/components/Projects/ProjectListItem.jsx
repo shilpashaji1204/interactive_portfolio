@@ -19,29 +19,27 @@ export default function ProjectListItem(props) {
   }
   return (
     <div>
-        
-    <VerticalTimelineElement
-      layout={'1-column-right'}
-      date ="2023"
-      className="project-icon"
-      iconStyle={{ background: 'black', color: "white" }}
-      icon={<Assignment />}>
-        <h1>{title}</h1>
-        <h2>{description}</h2>
-        <p>{features}</p>
-          <h3> Tech Stack: </h3>
-          <p>{tech_stack}</p>
-        <div>
-          <Link to={project_url} >
-            <img className="image" src={image_url} />
-          </Link>
-          {editAuth && (
-            <button className="edit-button" onClick={handleEdit}>Edit</button>
-          )}
-        </div>
-    </VerticalTimelineElement>  
-    
-      <div></div>
+      <VerticalTimelineElement
+        date ="2023"
+        className="project-icon"
+        iconStyle={{ background: 'black', color: "white" }}
+        icon={<Assignment />}>
+          <h1>{title}</h1>
+          <h2>{description}</h2>
+          <p>{features}</p>
+            <h3> Tech Stack: </h3>
+            <p>{tech_stack}</p>
+          <div>
+            <Link to={project_url} >
+              <img className="image" src={image_url} />
+            </Link>
+            {editAuth && (
+              <button className="edit-button" onClick={handleEdit}>Edit</button>
+            )}
+          </div>
+        </VerticalTimelineElement>     
+      <div>
+      </div>
     </div>
   )
 };

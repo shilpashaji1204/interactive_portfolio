@@ -5,7 +5,7 @@ import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeli
 export default function ProjectList(props) {
 
   const editAuth = props.editAuth;
-  
+
   const projectArray = props.projectData.map(project => (
     <ProjectListItem
       key={project.id}

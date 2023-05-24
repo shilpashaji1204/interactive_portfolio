@@ -24,7 +24,7 @@ export default function EditProject(props) {
           <p>Description: {description}</p>
         <table style={{width: 300}}>
           <thead>
-            <tr style={{width: 1000}}>
+            <tr style={{width: 100}}>
               <th style={{height: 100}}>Features</th>
               <th>{features}</th>
             </tr>

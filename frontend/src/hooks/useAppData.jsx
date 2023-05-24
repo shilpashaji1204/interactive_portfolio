@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
-import { getUserProjects, getProject } from "../helpers/projectsHelpers";
+import { getUserProjects, getProject, getProjects } from "../helpers/projectsHelpers";
 
 export default function useAppData() {
 
@@ -18,6 +18,7 @@ export default function useAppData() {
   const [joshProjects, setJoshProjects] = useState([]);
   const [shilpaProjects, setShilpaProjects] = useState([]);
   const [project, setProject] = useState([]);
+  const [allProjects, setAllProjects] = useState([]);
 
   useEffect(() => {
     const user_id = localStorage.getItem("user_id");
@@ -28,17 +29,18 @@ export default function useAppData() {
       getUserProjects(5),
       getUserProjects(7),
       getProject(project_id),
+      getProjects(),
     ])
     .then((all) => {
       setProjects(all[0]['data']);
       setJoshProjects(all[1]['data']);
       setShilpaProjects(all[2]['data']);
       setProject((all[3]['data'][0]));
-      //localStorage.setItem("currentProject", (all[3]['data'][0]));
+      setAllProjects(all[4]['data']);
     })
 
   }, []);
 
-  return { projects, state, joshProjects, shilpaProjects, project };
+  return { projects, state, joshProjects, shilpaProjects, project, allProjects };
   
 };
