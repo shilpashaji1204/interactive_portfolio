@@ -1,9 +1,10 @@
+
 .flip-card-container {
   display: flex;
   justify-content: center;
   margin-top: 40px;
   gap: 20px;
-
+  
 }
 .intoduction {
   text-align: center;
