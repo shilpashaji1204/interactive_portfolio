@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import animationData from "../assets/97525-code-dark.json";
 import "../styles/HeroSection.css";
+import Cube from "../pages/Cube";
 
 const HeroSection = () => {
 
@@ -22,6 +23,7 @@ const HeroSection = () => {
         </div>
         <div className="section-hero-animation">
           <Lottie animationData={animationData} />
+          <Cube />
         </div>
         </wrapper>
       
@@ -29,6 +31,7 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
 
 
 // // ORGINAIL CODE (SH) BELOW
