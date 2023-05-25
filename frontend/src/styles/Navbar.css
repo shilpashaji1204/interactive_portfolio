@@ -3,6 +3,7 @@
     width: 100%;
     height: 100px;
     background: rgb(233, 186, 194);
+    z-index: 9999;
 }
 .navbar-logo {
   display: flex;

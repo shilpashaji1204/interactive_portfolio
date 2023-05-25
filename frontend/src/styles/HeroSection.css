@@ -1,23 +1,30 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin-top: 450px; 
-    margin-bottom: 10px; 
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 500px;
+  margin-bottom: 10px;
+}
+
+.section-hero-data {
+  text-align: center;
+  font-size: 24px; /* Adjust the font size as desired */
+  margin-bottom: 1px;
+  z-index: 2;
+  background-color: white;
+  padding: 0px; /* Adjust the padding to make the box thinner */
+  max-width: 1000px; /* Adjust the max-width to make the box wider */
+  width: 90%;
+}
+
+.section-hero-animation {
+  margin-top: 1px;
+  margin-bottom: 220px;
+}
+
   
-  .section-hero-data {
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 1px; 
-  }
-  
-  .section-hero-animation {
-    margin-top: 1px; 
-    margin-bottom: 220px; 
-  }
   
 
 
