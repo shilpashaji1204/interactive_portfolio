@@ -1,74 +1,27 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin-top: px; 
-    margin-bottom: 10px; 
-  }
-  
-  .section-hero-data {
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 1px; 
-  }
-  
-  .section-hero-animation {
-    margin-top: -505px; 
-    margin-bottom: 220px; 
-  }
-  
-  .hero-button {
-    margin-top: 20px;
-    background-color: #0a0909;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.hero-button:hover {
-    background-color: #b39f9f;
-    color: black;
-  }
-
-
-
-
-
-/* original css below */
-
-/* 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 500px;
+  margin-bottom: 10px;
 }
 
 .section-hero-data {
-    text-align: center;
-    font-size: 30px;
+  text-align: center;
+  font-size: 20px; /* Adjust the font size as desired */
+  margin-bottom: 1px;
+  z-index: 2;
+  background-color: white;
+  padding: 0px; /* Adjust the padding to make the box thinner */
+  max-width: 900px; /* Adjust the max-width to make the box wider */
+  width: 90%;
+  border-radius: 20px;
+  margin-left: 20px;
 }
 
-.hero-button {
-    margin-top: 20px;
-    background-color: #0a0909;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.section-hero-animation {
+  margin-top: 1px;
+  margin-bottom: 220px;
 }
-
-.hero-button:hover {
-    background-color: #b39f9f;
-    color: black;
-  } */
-
