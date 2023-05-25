@@ -11,7 +11,7 @@ const Work = () => {
     <div>
       <VerticalTimeline lineColor="black">
         <VerticalTimelineElement className="vertical-timeline-element--education"
-          date="2023"
+          date="2023" 
           iconStyle={{ background: "black", color: "white" }}
           icon={<SchoolIcon />}
         >
