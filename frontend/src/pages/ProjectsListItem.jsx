@@ -8,7 +8,7 @@ export default function ProjectsListItem(props) {
 
   return (
 
-    <div className="project-container">
+    <div className="flip-card-container">
 
       <div className="projects">
         <div className="project-card">

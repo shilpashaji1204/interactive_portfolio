@@ -7,7 +7,6 @@ import animationData from "../assets/125170-projects-text.json"
 import { Link } from "react-router-dom"
 import useAppData from "../hooks/useAppData";
 import ProjectsListItem from "./ProjectsListItem";
-import "./About.css";
 
 
 const Projects = () => {
