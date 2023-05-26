@@ -5,6 +5,7 @@ Application for bulding and displaying interactive 3D portfolios.
 ## Features 
 
   - View past projects and work experience of users
+  - Projects and work history rendered on interactive timeline
   - Login and signup pages
   - Delete, add or edit projects
   - Projects are linked to github repos
@@ -19,9 +20,15 @@ Application for bulding and displaying interactive 3D portfolios.
 
   Portfolio Page 1:
 
+  !["Portfolio Page 1"](https://github.com/7-O-2-H/interactive_portfolio/blob/main/docs/Screenshot%202023-05-25%20at%208.11.22%20PM.png)
+
   Portfolio Page 2:
 
+  !["Portfolio Page 2"](https://github.com/7-O-2-H/interactive_portfolio/blob/main/docs/Screenshot%202023-05-25%20at%208.11.36%20PM.png)
+
   Add Project Form:
+
+  !["Add Project"](https://github.com/7-O-2-H/interactive_portfolio/blob/main/docs/Screenshot%202023-05-25%20at%208.11.49%20PM.png)
 
 ## Dependencies
 
