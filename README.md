@@ -4,18 +4,38 @@ Application for bulding and displaying interactive 3D portfolios.
 
 ## Features 
 
-  - View past projects and work experience
+  - View past projects and work experience of users
   - Login and signup pages
   - Delete, add or edit projects
   - Projects are linked to github repos
+  - Use built in forms to contact protfolio owners
+  - Torus animation on home page built with ThreeJS 
+
+## Screenshots
 
   Landing Page:
 
   !["Landing Page"](https://github.com/7-O-2-H/interactive_portfolio/blob/main/docs/Screenshot%202023-05-25%20at%201.26.44%20PM.png)
 
+  Portfolio Page 1:
+
+  Portfolio Page 2:
+
+  Add Project Form:
+
 ## Dependencies
 
-- Rails 6.1 [Rails Guide](http://guides.rubyonrails.org/v6.1/)
+- React
+- Three JS
 - Bootstrap 5
-- PostgreSQL 9.x
-- Stripe
+- PostgreSQL 
+- Express
+
+## Setup
+
+1. Run `npm install` to install dependencies
+2. Run `npm run db:reset` to create, load and seed db
+3. Create .env file based on .env.example
+4. Run `npm run dev` in the frontend to start the server
+5. Run `npm run start` in the backend to run the server
+
