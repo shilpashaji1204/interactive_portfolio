@@ -1,0 +1,62 @@
+.edit-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.project-details {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 700px;
+}
+
+.project-detail {
+  margin-bottom: 10px;
+}
+
+.detail-label {
+  font-weight: bold;
+}
+
+.detail-value {
+  margin-top: 5px;
+}
+
+
+
+.edit-form {
+  display: block;
+  align-items: center;
+  background-color: white;
+  box-shadow: 1px 1px 3px 2px #ddd;
+  margin: 194px auto;
+  width: 800px;
+  max-height: 700px;
+  padding: 20px 60px 40px;
+  margin-top: -150px;
+}
+
+.edit-submit-btn {
+  margin-left: 180px;
+  align-self: center;
+  padding: 5px;
+  font-size: medium;
+  border-radius: 30px;
+  width: 50%;
+}
+
+.delete-btn {
+  padding: 5px;
+  font-size: medium;
+  border-radius: 30px;
+  width: 30%;
+  margin: 280px;
+  margin-top: 20px;
+}

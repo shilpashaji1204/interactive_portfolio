@@ -1,0 +1,67 @@
+.josh-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 90px;
+    text-align: center;
+  }
+
+  .about1 {
+    margin-bottom: 40px;
+  }
+
+  .about1 h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .about1 p {
+    font-size: 18px;
+  }
+
+  .about1 .MuiSvgIcon-root {
+    font-size: 32px;
+    margin: 10px;
+    color: black;
+  }
+
+  .skills {
+    margin-bottom: 40px;
+  }
+
+  .skills h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .skills .list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  .list .item {
+    margin-bottom: 20px;
+  }
+
+  .list .item h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .list .item span {
+    font-size: 16px;
+    color: rgb(219, 212, 204);
+  }
+
+  .add-btn {
+    display: flex;
+    padding-left: 50%;
+    align-self: center;
+    margin-left: 53px;
+  }
+
+  .add-btn:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 11px gray);
+  }
